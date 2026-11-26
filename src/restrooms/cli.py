@@ -44,6 +44,9 @@ def main(argv: list[str] | None = None) -> int:
     c.add_argument("--phase", type=int, help="only sources needed up to this phase")
     i = sub.add_parser("ingest", help="download sources (Phase 1)")
     i.add_argument("--dry-run", action="store_true", help="check sources, download nothing")
+    i.add_argument("--only", nargs="+", help="source keys to ingest (default: all Phase 1)")
+    i.add_argument("--force", action="store_true", help="re-download files even if fresh")
+    sub.add_parser("build", help="build processed tables from data/raw (Phase 1)")
     args = p.parse_args(argv)
 
     if args.cmd == "check-sources":
@@ -51,8 +54,16 @@ def main(argv: list[str] | None = None) -> int:
     if args.cmd == "ingest":
         if args.dry_run:
             return run_checks()
-        print("ingest is implemented in Phase 1", file=sys.stderr)
-        return 2
+        from restrooms.ingest import PHASE1, ingest
+
+        ingest(args.only or PHASE1, force=args.force)
+        return 0
+    if args.cmd == "build":
+        from restrooms.build import build
+
+        build()
+        return 0
+    print(f"unknown command {args.cmd}", file=sys.stderr)
     return 2
 
 

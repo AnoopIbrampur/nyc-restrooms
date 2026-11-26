@@ -1,0 +1,69 @@
+{
+  "boroughs": {
+    "fetched_at": "2026-11-26T23:30:38+00:00",
+    "rows": 5,
+    "rows_updated_at": "2026-11-02T19:28:11+00:00"
+  },
+  "dohmh_restaurants": {
+    "fetched_at": "2026-11-26T23:29:38+00:00",
+    "rows": 295608,
+    "rows_updated_at": "2026-11-26T23:06:58+00:00"
+  },
+  "mta_stations": {
+    "fetched_at": "2026-11-26T23:30:44+00:00",
+    "rows": 496,
+    "rows_updated_at": "2026-11-26T05:22:14+00:00"
+  },
+  "nyc_restrooms": {
+    "fetched_at": "2026-11-26T23:27:54+00:00",
+    "rows": 1100,
+    "rows_updated_at": "2026-11-04T21:47:30+00:00"
+  },
+  "osm_extract": {
+    "bytes": 499326585,
+    "downloaded": true,
+    "fetched_at": "2026-11-26T23:30:46+00:00",
+    "path": "data/raw/new-york-latest.osm.pbf",
+    "remote_last_modified": "2026-11-26T17:30:53+00:00"
+  },
+  "parks_inspections": {
+    "fetched_at": "2026-11-26T23:28:28+00:00",
+    "rows": 153765,
+    "rows_updated_at": "2026-11-02T14:23:19+00:00"
+  },
+  "parks_restroom_hazards": {
+    "fetched_at": "2026-11-26T23:28:26+00:00",
+    "rows": 31047,
+    "rows_updated_at": "2026-11-02T14:35:16+00:00"
+  },
+  "parks_restroom_inspections": {
+    "fetched_at": "2026-11-26T23:28:04+00:00",
+    "rows": 32232,
+    "rows_updated_at": "2026-11-02T14:34:33+00:00"
+  },
+  "parks_restroom_ratings": {
+    "fetched_at": "2026-11-26T23:28:06+00:00",
+    "rows": 256845,
+    "rows_updated_at": "2026-11-02T14:37:55+00:00"
+  },
+  "parks_restroom_sites": {
+    "fetched_at": "2026-11-26T23:28:00+00:00",
+    "rows": 736,
+    "rows_updated_at": "2026-11-02T14:35:47+00:00"
+  },
+  "parks_sites": {
+    "fetched_at": "2026-11-26T23:28:57+00:00",
+    "rows": 6412,
+    "rows_updated_at": "2026-11-25T15:39:48+00:00"
+  },
+  "ped_counts": {
+    "fetched_at": "2026-11-26T23:30:45+00:00",
+    "rows": 114,
+    "rows_updated_at": "2026-11-17T22:21:39+00:00"
+  },
+  "refuge": {
+    "fetched_at": "2026-11-26T23:29:12+00:00",
+    "pages": 15,
+    "rows": 1466
+  }
+}

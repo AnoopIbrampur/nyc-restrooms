@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="handmade">
+  <!-- inside the test square (lon -74.0..-73.9, lat 40.7..40.8) -->
+  <node id="1" lat="40.75" lon="-73.95" version="1">
+    <tag k="amenity" v="cafe"/><tag k="name" v="Bean Co"/><tag k="toilets" v="yes"/>
+    <tag k="toilets:access" v="customers"/>
+  </node>
+  <node id="2" lat="40.76" lon="-73.96" version="1">
+    <tag k="amenity" v="toilets"/><tag k="access" v="yes"/><tag k="opening_hours" v="24/7"/>
+  </node>
+  <!-- no relevant tags: filtered out -->
+  <node id="3" lat="40.77" lon="-73.97" version="1"><tag k="highway" v="crossing"/></node>
+  <!-- outside the square -->
+  <node id="4" lat="41.50" lon="-73.95" version="1"><tag k="shop" v="bakery"/></node>
+  <!-- way nodes (untagged) forming a closed square around (40.73, -73.93) -->
+  <node id="10" lat="40.72" lon="-73.94" version="1"/>
+  <node id="11" lat="40.72" lon="-73.92" version="1"/>
+  <node id="12" lat="40.74" lon="-73.92" version="1"/>
+  <node id="13" lat="40.74" lon="-73.94" version="1"/>
+  <way id="100" version="1">
+    <nd ref="10"/><nd ref="11"/><nd ref="12"/><nd ref="13"/><nd ref="10"/>
+    <tag k="shop" v="department_store"/><tag k="name" v="Big Store"/><tag k="toilets" v="no"/>
+  </way>
+  <relation id="1000" version="1">
+    <member type="way" ref="100" role="outer"/>
+    <tag k="type" v="multipolygon"/><tag k="tourism" v="museum"/>
+  </relation>
+</osm>

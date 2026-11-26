@@ -1,0 +1,90 @@
+{
+  "built_at": "2026-11-26T23:55:05+00:00",
+  "dohmh": {
+    "establishments": 31556,
+    "no_coords": 808,
+    "never_inspected": 3881
+  },
+  "refuge": {
+    "fetched": 1466,
+    "spam": 116,
+    "outside_nyc": 252,
+    "kept": 1098
+  },
+  "osm_extract": {
+    "relations_skipped": 4165,
+    "ways_no_coords": 0,
+    "outside": 5432,
+    "kept": 275976,
+    "non_venue_dropped": 213383
+  },
+  "osm_counts": {
+    "amenity_toilets": 796,
+    "toilets_tag_any": 1350,
+    "toilets_yes": 1069,
+    "toilets_no": 248,
+    "food_places": 17313,
+    "shops": 25933
+  },
+  "osm_reference": {
+    "amenity_toilets": 796,
+    "toilets_tag_any": 1351,
+    "toilets_yes": 1070,
+    "toilets_no": 248,
+    "food_places": 17322,
+    "shops": 25942
+  },
+  "links": {
+    "official_osm": 901,
+    "dohmh_osm": 13505,
+    "refuge_osm": 441,
+    "refuge_dohmh": 36
+  },
+  "places": 80656,
+  "official": {
+    "rows": 1100,
+    "hours_confidence_by_row": {
+      "medium": 667,
+      "high": 335,
+      "none": 97,
+      "low": 1
+    },
+    "season_extension_unknown": 613,
+    "typo_fixed": 27,
+    "matched_to_osm": 901
+  },
+  "osm_hours": {
+    "with_opening_hours_tag": 21254,
+    "parsed": 20992,
+    "parse_rate": 0.9956
+  },
+  "labels": {
+    "osm_toilets": {
+      "yes": 1069,
+      "no": 248,
+      "customers": 30,
+      "05:00-24:00": 1,
+      "separate": 1,
+      "unknown": 1
+    },
+    "osm_toilets_access": {
+      "customers": 136,
+      "permissive": 67,
+      "yes": 15,
+      "public": 15,
+      "private": 2,
+      "no": 1
+    },
+    "official_present": 1100,
+    "refuge_present": 1098,
+    "likely_covered_pickup": 30748
+  },
+  "borough_counts": {
+    "Manhattan": 27068,
+    "Brooklyn": 23000,
+    "Queens": 19631,
+    "Staten Island": 5643,
+    "Bronx": 5304,
+    "null": 10
+  }
+}

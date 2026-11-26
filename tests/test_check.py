@@ -78,8 +78,11 @@ def test_api_empty_fails():
     assert not check_source(API, requests.Session()).ok
 
 
-def test_ingest_without_dry_run_not_implemented(capsys):
-    assert main(["ingest"]) == 2
+def test_ingest_cli_passes_keys(monkeypatch):
+    calls = []
+    monkeypatch.setattr("restrooms.ingest.ingest", lambda keys, force=False: calls.append(keys))
+    assert main(["ingest", "--only", "nyc_restrooms", "boroughs"]) == 0
+    assert calls == [["nyc_restrooms", "boroughs"]]
 
 
 @pytest.mark.live
