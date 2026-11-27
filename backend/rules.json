@@ -5,5 +5,7 @@
   "min_refused_share": 0.5,
   "min_area_reports": 10,
   "min_area_devices": 5,
-  "max_writes_per_ip_per_day": 40
+  "max_writes_per_ip_per_day": 40,
+  "confirm_window_days": 90,
+  "min_closed_votes": 3
 }

@@ -1,0 +1,14 @@
+{
+  "name": "nyc-restrooms-backend",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --local --port 8787",
+    "db:local": "wrangler d1 execute nyc-restrooms --local --file schema.sql",
+    "seed:local": "wrangler d1 execute nyc-restrooms --local --file seed/places.sql",
+    "test": "node --test test/"
+  },
+  "devDependencies": {
+    "wrangler": "4.158.0"
+  }
+}

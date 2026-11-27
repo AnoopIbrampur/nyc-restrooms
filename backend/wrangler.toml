@@ -1,0 +1,25 @@
+name = "nyc-restrooms-api"
+main = "src/index.js"
+compatibility_date = "2026-11-01"
+
+# Production values are set at deploy time. Secrets (never committed):
+#   wrangler secret put HMAC_KEY          # random 32+ bytes, keys the device/ip hashes
+#   wrangler secret put TURNSTILE_SECRET  # Cloudflare Turnstile secret for the site key
+[vars]
+ALLOWED_ORIGIN = "https://anoopibrampur.github.io"
+DEV = "0"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "nyc-restrooms"
+database_id = "00000000-0000-0000-0000-000000000000"  # replaced after `wrangler d1 create`
+
+[triggers]
+crons = ["17 7 * * *"]  # daily purge of raw rows older than the window
+
+# Local development: `npm run dev` uses .dev.vars (gitignored) for DEV=1 and a dev HMAC_KEY.
+
+[[rules]]
+type = "Text"
+globs = ["**/*.sql"]
+fallthrough = true
