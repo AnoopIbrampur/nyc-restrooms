@@ -1,0 +1,11 @@
+{
+  "name": "NYC Restroom Finder",
+  "short_name": "Restrooms",
+  "description": "Free public restrooms open now near you in New York City.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f6f2",
+  "theme_color": "#1f5bd6",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}

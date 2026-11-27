@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NYC Restroom Finder</title>
+<meta name="description" content="Free public restrooms open now near you in New York City, with accessibility filters.">
+<meta name="theme-color" content="#1f5bd6">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<style>
+  :root { --bg:#f7f6f2; --card:#fff; --ink:#17191c; --muted:#5b616b; --line:#e2dfd8; --accent:#1f5bd6; --accent-ink:#fff; --ok:#1a7f5a; --warn:#a3471b; --soft:#eef2fb; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#131518; --card:#1c1f23; --ink:#ecebe7; --muted:#a1a7af; --line:#2f3338; --accent:#7c9dff; --accent-ink:#0d1020; --ok:#5cc79a; --warn:#f0a06f; --soft:#1e2533; } }
+  :root[data-theme="dark"] { --bg:#131518; --card:#1c1f23; --ink:#ecebe7; --muted:#a1a7af; --line:#2f3338; --accent:#7c9dff; --accent-ink:#0d1020; --ok:#5cc79a; --warn:#f0a06f; --soft:#1e2533; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 14px 16px 40px; }
+  h1 { font-size: 22px; margin: 4px 0 2px; }
+  .sub { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .row { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+  .btn { min-height:44px; padding:10px 14px; border-radius:10px; border:1px solid var(--line); background:var(--card); color:var(--ink); font:inherit; font-weight:600; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; }
+  .btn.primary { background:var(--accent); border-color:var(--accent); color:var(--accent-ink); }
+  .chip { min-height:38px; padding:6px 12px; border-radius:999px; border:1px solid var(--line); background:var(--card); color:var(--ink); font:inherit; font-size:14px; cursor:pointer; }
+  .chip[aria-pressed="true"] { background:var(--accent); border-color:var(--accent); color:var(--accent-ink); }
+  #map { height: 300px; border-radius: 12px; margin: 12px 0; background: var(--bg); }
+  .note { font-size: 13.5px; color: var(--muted); }
+  .banner { background: var(--soft); border-radius: 12px; padding: 12px 14px; margin: 10px 0; }
+  ul.list { list-style:none; padding:0; margin:0; }
+  ul.list li { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 14px; margin:8px 0; }
+  .name { font-weight: 650; }
+  .meta { font-size: 14px; color: var(--muted); }
+  .badges { display:flex; flex-wrap:wrap; gap:6px; margin:6px 0; }
+  .badge { font-size: 12.5px; padding: 2px 8px; border-radius: 999px; border:1px solid var(--line); }
+  .badge.yes { border-color: var(--ok); color: var(--ok); }
+  .badge.unknown { color: var(--muted); }
+  .open { color: var(--ok); font-weight: 600; }
+  .warn { color: var(--warn); }
+  .confirm { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
+  .confirm button { min-height: 36px; padding: 4px 10px; border-radius: 8px; border:1px solid var(--line); background: var(--card); color: var(--ink); font: inherit; font-size: 13.5px; cursor: pointer; }
+  a { color: var(--accent); }
+  .basemap { filter: grayscale(1) contrast(0.9) opacity(0.8); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .basemap { filter: grayscale(1) invert(1) contrast(0.85) opacity(0.6); } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Restrooms open near you</h1>
+  <p class="sub" id="nowLabel">Free public restrooms in NYC, open now by their listed hours.</p>
+
+  <div class="row">
+    <button class="btn primary" id="locate">Use my location</button>
+    <button class="chip" id="workerMode" aria-pressed="false">I'm a delivery worker</button>
+  </div>
+  <div class="banner" id="workerBanner" hidden>
+    <b>Picking up an order?</b> NYC law lets you use the restroom where you pick up, at restaurants, groceries and other businesses, with narrow exceptions. <a href="WORKER_URL">Your rights and the official access card →</a>
+  </div>
+
+  <div class="row" style="margin-top:10px" role="group" aria-label="Filters">
+    <button class="chip" data-f="acc" aria-pressed="false">Accessible</button>
+    <button class="chip" data-f="chg" aria-pressed="false">Changing table</button>
+    <button class="chip" data-f="gn" aria-pressed="false">Gender-neutral</button>
+    <button class="chip" id="unknownHours" aria-pressed="false">Include hours unknown</button>
+  </div>
+  <p class="note" id="hiddenNote"></p>
+
+  <div id="map" role="application" aria-label="Map of restrooms"></div>
+  <p class="note" id="pickNote">Tap the map or use your location to list the nearest restrooms. Your location stays on your phone.</p>
+  <ul class="list" id="list"></ul>
+
+  <p class="note" id="communityNote"></p>
+  <p class="note">Hours come from the city's data and OpenStreetMap and can be wrong. "Accessible" includes places marked partially accessible. "Unknown" is shown as unknown, not as no. <a href="MAP_URL">Citywide map and analysis</a> · <a href="https://github.com/AnoopIbrampur/nyc-restrooms">About this project</a></p>
+  <div id="ts" hidden></div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+  // drafts live in site_drafts/app/, published copies in docs/app/
+  window.SITE_BASE = location.pathname.includes("/site_drafts/") ? "../../docs/" : "../";
+  document.write(`<script src="${window.SITE_BASE}config.js"><\/script>`);
+</script>
+<script type="module">
+  const BASE = window.SITE_BASE;
+  const { applyFilters, confirmationLines, km, nycNow, openNow, walkMinutes, FILTER_KEYS } =
+    await import(`${BASE}assets/status.js`);
+
+  for (const a of document.querySelectorAll('a[href="WORKER_URL"]')) a.href = `${BASE}worker/`;
+  for (const a of document.querySelectorAll('a[href="MAP_URL"]')) a.href = `${BASE}map/`;
+
+  const cfg = { ...(window.NYC_RESTROOMS_CONFIG || {}) };
+  const local = ["localhost", "127.0.0.1"].includes(location.hostname);
+  const qApi = new URLSearchParams(location.search).get("api");
+  if (local && qApi) cfg.apiBase = qApi; // local testing only
+  const community = Boolean(cfg.apiBase);
+
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const store = { get(k) { try { return localStorage.getItem(k); } catch { return null; } },
+                  set(k, v) { try { localStorage.setItem(k, v); } catch {} } };
+
+  const now = nycNow();
+  const dayName = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"][now.dow];
+  const h12 = (now.hour % 12) || 12;
+  document.getElementById("nowLabel").textContent =
+    `Free public restrooms open now (${dayName} ${h12} ${now.hour < 12 ? "am" : "pm"} in NYC) by their listed hours.`;
+
+  const data = await (await fetch(`${BASE}data/restrooms.json`)).json();
+  let confirms = {};
+  async function loadConfirms(mode = "no-cache") {
+    if (!community) return;
+    try {
+      const pub = await (await fetch(`${cfg.apiBase}/v1/public`, { cache: mode })).json();
+      confirms = Object.fromEntries((pub.confirmations || []).map((c) => [c.restroom_id, c]));
+    } catch { /* community data unavailable: page still works */ }
+  }
+  await loadConfirms();
+  document.getElementById("communityNote").textContent = community
+    ? "Confirmations are shared anonymously: a random token on your phone and a hashed network address, deleted after 90 days. One 'closed' report can't hide a restroom: it takes three independent ones."
+    : "Community confirmations (still open, closed, needs a code) are coming soon.";
+
+  const filters = { acc: "any", chg: "any", gn: "any" };
+  let includeUnknown = false, me = null;
+
+  const map = L.map("map").setView([40.73, -73.95], 12);
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors', maxZoom: 19, className: "basemap",
+  }).addTo(map);
+  const layer = L.layerGroup().addTo(map);
+  let meMarker = null;
+
+  function current() {
+    return applyFilters(data, filters, { includeUnknownHours: includeUnknown, now });
+  }
+
+  const BADGE = { acc: ["Accessible", "Accessible (limited)"], chg: ["Changing table"], gn: ["Gender-neutral"] };
+  function badges(r) {
+    const out = [];
+    for (const k of Object.keys(FILTER_KEYS)) {
+      const v = r[k];
+      if (v === "yes") out.push(`<span class="badge yes">${BADGE[k][0]}</span>`);
+      else if (v === "limited") out.push(`<span class="badge yes">${BADGE[k][1]}</span>`);
+      else if (v === "unknown") out.push(`<span class="badge unknown">${FILTER_KEYS[k]}: unknown</span>`);
+    }
+    return out.join("");
+  }
+
+  function draw() {
+    const { shown, hidden } = current();
+    const notes = [];
+    for (const k of Object.keys(FILTER_KEYS)) if (hidden[k]) notes.push(`${hidden[k]} hidden because ${FILTER_KEYS[k].toLowerCase()} is unknown`);
+    if (hidden.hours) notes.push(`${hidden.hours} with unknown hours not shown`);
+    document.getElementById("hiddenNote").textContent = notes.join(" · ");
+    layer.clearLayers();
+    shown.forEach((r) => {
+      const known = openNow(r, now) !== null;
+      L.circleMarker([r.la, r.lo], { radius: 5, weight: 1, color: "#fff", fillColor: known ? "#1a7f5a" : "#8a8f98", fillOpacity: 0.95 })
+        .bindPopup(`<b>${esc(r.n)}</b><br>${esc(r.t)}`).addTo(layer);
+    });
+    if (me) listNear(me, shown);
+  }
+
+  function listNear(pt, shown = current().shown) {
+    me = pt;
+    if (meMarker) map.removeLayer(meMarker);
+    meMarker = L.circleMarker(pt, { radius: 7, weight: 3, color: "#1f5bd6", fillColor: "#fff", fillOpacity: 1 }).addTo(map);
+    const near = shown.map((r) => ({ r, d: km(pt, [r.la, r.lo]) })).sort((a, b) => a.d - b.d).slice(0, 10);
+    document.getElementById("pickNote").hidden = true;
+    document.getElementById("list").innerHTML = near.length ? near.map(({ r, d }) => {
+      const o = openNow(r, now);
+      const status = o === true ? '<span class="open">Open now</span>' : '<span class="meta">Hours unknown</span>';
+      const conf = confirmationLines(confirms[r.id], now.iso);
+      const confHtml = conf.map((l) => `<div class="meta ${l.startsWith("Reported closed") ? "warn" : ""}">${esc(l)}</div>`).join("");
+      const buttons = community ? `<div class="confirm" data-id="${esc(r.id)}">
+          <button data-k="open">Still open</button><button data-k="closed">Closed</button>
+          <button data-k="needs_code">Needs a code</button><button data-k="clean">Clean</button><button data-k="dirty">Dirty</button></div>` : "";
+      return `<li><div class="name">${esc(r.n)}</div>
+        <div class="meta">${status} · ${(d * 0.621).toFixed(2)} mi straight line, about ${walkMinutes(d)} min walk · ${esc(r.t)}</div>
+        <div class="badges">${badges(r)}</div>
+        ${r.h ? `<div class="meta">${esc(r.h).replace(/\n/g, "<br>")}</div>` : ""}
+        ${r.later ? '<div class="meta">Listed as "open later seasonally": may stay open past 4 pm in summer.</div>' : ""}
+        ${confHtml}${buttons}
+        <div class="meta"><a href="https://www.openstreetmap.org/directions?engine=fossgis_osrm_foot&route=${pt[0]}%2C${pt[1]}%3B${r.la}%2C${r.lo}" target="_blank" rel="noopener">Walking directions</a></div></li>`;
+    }).join("") : "<li>No restroom matches your filters here right now.</li>";
+    const b = L.latLngBounds([pt, ...near.slice(0, 5).map((n) => [n.r.la, n.r.lo])]);
+    map.fitBounds(b.pad(0.25));
+  }
+
+  // community confirmations (only when an API is configured)
+  function deviceToken() {
+    let t = store.get("nycr_device");
+    if (!t) {
+      const a = new Uint8Array(24); crypto.getRandomValues(a);
+      t = btoa(String.fromCharCode(...a)).replace(/[+/=]/g, (c) => ({ "+": "-", "/": "_", "=": "" }[c]));
+      store.set("nycr_device", t);
+    }
+    return t;
+  }
+  async function turnstileToken() {
+    if (!cfg.turnstileSiteKey) return "";
+    if (!window.turnstile) {
+      await new Promise((res, rej) => { const s = document.createElement("script"); s.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"; s.onload = res; s.onerror = rej; document.head.appendChild(s); });
+    }
+    return new Promise((res) => {
+      const el = document.getElementById("ts"); el.hidden = false; el.innerHTML = "";
+      window.turnstile.render(el, { sitekey: cfg.turnstileSiteKey, callback: (tok) => { el.hidden = true; res(tok); } });
+    });
+  }
+  document.getElementById("list").addEventListener("click", async (e) => {
+    const btn = e.target.closest(".confirm button"); if (!btn) return;
+    const id = btn.parentElement.dataset.id, kind = btn.dataset.k;
+    btn.disabled = true;
+    try {
+      const r = await fetch(`${cfg.apiBase}/v1/confirm`, { method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ restroom_id: id, kind, device_token: deviceToken(), turnstile: await turnstileToken() }) });
+      btn.textContent = r.ok ? "Thanks ✓" : r.status === 429 ? "Limit reached" : "Couldn't send";
+      if (r.ok) { await loadConfirms("no-store"); if (me) listNear(me); }
+    } catch { btn.textContent = "Offline"; }
+  });
+
+  for (const c of document.querySelectorAll(".chip[data-f]")) c.addEventListener("click", () => {
+    const on = c.getAttribute("aria-pressed") !== "true";
+    c.setAttribute("aria-pressed", on); filters[c.dataset.f] = on ? "yes" : "any"; draw();
+  });
+  document.getElementById("unknownHours").addEventListener("click", (e) => {
+    includeUnknown = !includeUnknown; e.currentTarget.setAttribute("aria-pressed", includeUnknown); draw();
+  });
+  const wm = document.getElementById("workerMode");
+  const setWorker = (on) => { wm.setAttribute("aria-pressed", on); document.getElementById("workerBanner").hidden = !on; store.set("nycr_worker", on ? "1" : "0"); };
+  wm.addEventListener("click", () => setWorker(wm.getAttribute("aria-pressed") !== "true"));
+  setWorker(store.get("nycr_worker") === "1");
+
+  map.on("click", (e) => listNear([e.latlng.lat, e.latlng.lng]));
+  document.getElementById("locate").addEventListener("click", () => {
+    if (!navigator.geolocation) return alert("Location isn't available here. Tap the map instead.");
+    navigator.geolocation.getCurrentPosition((p) => listNear([p.coords.latitude, p.coords.longitude]),
+      () => alert("Couldn't get your location. Tap the map instead."), { enableHighAccuracy: true, timeout: 10000 });
+  });
+  draw();
+
+  if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+</script>
+</body>
+</html>

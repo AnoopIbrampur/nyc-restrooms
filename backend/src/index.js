@@ -143,7 +143,7 @@ export default {
     if (req.method === "OPTIONS") return cors(env, new Response(null, { status: 204 }));
     try {
       if (req.method === "GET" && url.pathname === "/v1/public") {
-        return cors(env, json(await publicSummary(env), 200, { "Cache-Control": "public, max-age=300" }));
+        return cors(env, json(await publicSummary(env), 200, { "Cache-Control": "public, max-age=60" }));
       }
       if (req.method === "POST" && url.pathname === "/v1/report") return cors(env, await handleWrite(env, req, "report"));
       if (req.method === "POST" && url.pathname === "/v1/confirm") return cors(env, await handleWrite(env, req, "confirm"));

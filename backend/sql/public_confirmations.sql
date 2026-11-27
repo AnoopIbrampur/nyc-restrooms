@@ -1,4 +1,6 @@
--- Restroom status confirmations, last ?2 days. One vote per device per restroom (latest).
+-- Restroom status confirmations, last ?2 days. One vote per device per restroom per
+-- question (latest): availability (open / closed / needs_code) and cleanliness
+-- (clean / dirty) are counted separately, so saying "clean" doesn't erase "open".
 -- "closed" is published only with >= ?3 devices AND >= ?3 ip hashes saying closed, so one
 -- person can never hide a restroom. ?1 today.
 WITH win AS (
@@ -6,7 +8,9 @@ WITH win AS (
   WHERE day > date(?1, '-' || ?2 || ' days') AND day <= ?1
 ),
 ranked AS (
-  SELECT *, ROW_NUMBER() OVER (PARTITION BY device, restroom_id ORDER BY day DESC, id DESC) AS rn
+  SELECT *, ROW_NUMBER() OVER (
+    PARTITION BY device, restroom_id, (kind IN ('clean', 'dirty'))
+    ORDER BY day DESC, id DESC) AS rn
   FROM win
 ),
 votes AS (SELECT * FROM ranked WHERE rn = 1)
