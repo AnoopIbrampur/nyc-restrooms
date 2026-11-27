@@ -1,0 +1,83 @@
+{
+  "universe": 70184,
+  "audit_rows_excluded_from_training": 320,
+  "labels_stage1": 1124,
+  "labels_stage2": 226,
+  "audit_rows_with_osm_label": 7,
+  "cv_stage1": {
+    "n": 1124,
+    "positive_rate": 0.832,
+    "baseline": 0.3314,
+    "logit": 0.3209,
+    "gbm": 0.3412
+  },
+  "cv_stage2": {
+    "n": 226,
+    "positive_rate": 0.323,
+    "baseline": 0.5509,
+    "logit": 0.5565,
+    "gbm": 0.7422
+  },
+  "logit_C": {
+    "s1": 1.0,
+    "s2": 0.2
+  },
+  "model_choice": {
+    "stage1": "logit",
+    "stage2": "logit"
+  },
+  "mean_predicted": {
+    "model": {
+      "free": 0.196,
+      "customers": 0.524,
+      "none": 0.279
+    },
+    "baseline": {
+      "free": 0.215,
+      "customers": 0.568,
+      "none": 0.217
+    }
+  },
+  "mean_by_group_model": {
+    "bar": {
+      "model_free": 0.422,
+      "model_customers": 0.565,
+      "model_none": 0.013
+    },
+    "cafe_bakery": {
+      "model_free": 0.2,
+      "model_customers": 0.431,
+      "model_none": 0.369
+    },
+    "grocery": {
+      "model_free": 0.315,
+      "model_customers": 0.22,
+      "model_none": 0.464
+    },
+    "lodging_culture_civic": {
+      "model_free": 0.331,
+      "model_customers": 0.555,
+      "model_none": 0.114
+    },
+    "quick_service": {
+      "model_free": 0.082,
+      "model_customers": 0.354,
+      "model_none": 0.564
+    },
+    "restaurant": {
+      "model_free": 0.11,
+      "model_customers": 0.814,
+      "model_none": 0.076
+    },
+    "retail": {
+      "model_free": 0.217,
+      "model_customers": 0.236,
+      "model_none": 0.546
+    },
+    "services_health": {
+      "model_free": 0.246,
+      "model_customers": 0.577,
+      "model_none": 0.177
+    }
+  }
+}
