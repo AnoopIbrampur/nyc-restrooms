@@ -86,12 +86,30 @@ def _export_map() -> None:
     export()
 
 
+def _likelihood() -> None:
+    from restrooms.likelihood import run
+
+    run()
+
+
+def _audit_score() -> None:
+    import json
+
+    from restrooms.audit import universe
+    from restrooms.audit_score import score
+
+    counts = universe()["group"].value_counts().to_dict()
+    print(json.dumps(score(counts), indent=2))
+
+
 PHASE2 = {
     "ridership": _ridership,
     "walk-graph": _walk_graph,
     "deserts": _deserts,
     "condition": _condition,
     "export-map": _export_map,
+    "likelihood": _likelihood,
+    "audit-score": _audit_score,
 }
 
 
@@ -110,6 +128,10 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("deserts", help="walk times + headline metrics (Phase 2, ~5 min)")
     sub.add_parser("condition", help="Parks restroom condition overlay (Phase 2)")
     sub.add_parser("export-map", help="write docs/map/data.json (Phase 2)")
+    sub.add_parser(
+        "likelihood", help="train restroom model + baseline, predict all places (Phase 3)"
+    )
+    sub.add_parser("audit-score", help="score the filled audit sheet, once (Phase 3)")
     args = p.parse_args(argv)
 
     if args.cmd in PHASE2:
