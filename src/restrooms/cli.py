@@ -108,6 +108,12 @@ def _worker_export() -> None:
     export()
 
 
+def _app_data() -> None:
+    from restrooms.app_data import refresh
+
+    refresh(fetch=True)
+
+
 PHASE2 = {
     "ridership": _ridership,
     "walk-graph": _walk_graph,
@@ -117,6 +123,7 @@ PHASE2 = {
     "likelihood": _likelihood,
     "audit-score": _audit_score,
     "worker-export": _worker_export,
+    "app-data": _app_data,
 }
 
 

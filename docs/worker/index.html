@@ -154,7 +154,8 @@
   } catch (e) { /* keep the empty state */ }
 
   // --- open-now restrooms
-  const data = await (await fetch("restrooms.json")).json();
+  // shared, nightly-refreshed data; only restrooms with listed hours can be "open now"
+  const data = (await (await fetch("../data/restrooms.json")).json()).filter(r => r.s && r.w);
   const ny = new Intl.DateTimeFormat("en-US", { timeZone: "America/New_York", weekday: "short", hour: "numeric", hour12: false, month: "numeric" });
   function nowIndex() {
     const parts = Object.fromEntries(ny.formatToParts(new Date()).map(p => [p.type, p.value]));
