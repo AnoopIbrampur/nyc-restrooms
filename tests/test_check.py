@@ -88,3 +88,14 @@ def test_ingest_cli_passes_keys(monkeypatch):
 @pytest.mark.live
 def test_all_sources_live():
     assert main(["check-sources"]) == 0
+
+
+def test_every_command_is_registered():
+    from restrooms.cli import PHASE2
+
+    with pytest.raises(SystemExit):  # --help exits after building the parser (and its check)
+        main(["--help"])
+    for cmd in PHASE2:
+        with pytest.raises(SystemExit) as e:
+            main([cmd, "--help"])
+        assert e.value.code == 0

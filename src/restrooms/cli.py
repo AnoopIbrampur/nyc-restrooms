@@ -146,9 +146,13 @@ def main(argv: list[str] | None = None) -> int:
         "likelihood", help="train restroom model + baseline, predict all places (Phase 3)"
     )
     sub.add_parser("audit-score", help="score the filled audit sheet, once (Phase 3)")
+    sub.add_parser("worker-export", help="aggregated reports file for docs/worker (Phase 4)")
     sub.add_parser(
-        "worker-export", help="data for the delivery-worker page in docs/worker (Phase 4)"
+        "app-data", help="refresh docs/data/restrooms.json from the city table (Phase 5)"
     )
+    missing = set(PHASE2) - set(sub.choices)
+    if missing:  # every command in PHASE2 must have a parser entry
+        raise RuntimeError(f"commands without a parser: {sorted(missing)}")
     args = p.parse_args(argv)
 
     if args.cmd in PHASE2:
