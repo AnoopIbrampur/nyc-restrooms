@@ -1,0 +1,9 @@
+{
+  "window_days": 180,
+  "min_devices_place": 3,
+  "min_refused_place": 3,
+  "min_refused_share": 0.5,
+  "min_area_reports": 10,
+  "min_area_devices": 5,
+  "max_writes_per_ip_per_day": 40
+}

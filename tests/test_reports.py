@@ -81,3 +81,21 @@ def test_area_rollup_needs_volume_and_devices():
 def test_bad_outcome_rejected():
     with pytest.raises(ValueError):
         Report("a", "violation", "d1", TODAY)
+
+
+def test_same_network_counts_once_for_listing():
+    # three device tokens, one network: looks like one person clearing storage
+    reps = [Report("a", "refused", f"d{i}", TODAY - timedelta(days=1), ip="h1") for i in range(3)]
+    assert public_summary(reps, PLACES, TODAY)["places"] == []
+    reps += [
+        Report("a", "refused", "d7", TODAY - timedelta(days=1), ip="h2"),
+        Report("a", "refused", "d8", TODAY - timedelta(days=1), ip="h3"),
+    ]
+    assert len(public_summary(reps, PLACES, TODAY)["places"]) == 1
+
+
+def test_same_day_tie_broken_by_seq():
+    d = TODAY - timedelta(days=1)
+    reps = [Report("a", "let_in", f"d{i}", d, seq=10) for i in range(3)]
+    reps += [Report("a", "refused", f"d{i}", d, seq=20) for i in range(3)]
+    assert len(public_summary(reps, PLACES, TODAY)["places"]) == 1
