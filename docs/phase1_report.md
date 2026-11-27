@@ -2,7 +2,7 @@
 
 Built 2026-11-26 from sources fetched the same day (versions in [`data_manifest.json`](data_manifest.json); raw numbers in [`phase1_build.json`](phase1_build.json)).
 
-**Output:** `data/processed/places.parquet` has **80,656 places** across the five boroughs. Each row carries its restroom evidence from every source in separate columns (`osm_*`, `official_*`, `refuge_*`), a `likely_covered_pickup` flag for delivery-worker mode, and summer/winter hourly open masks.
+**Output:** `data/processed/places.parquet` has **80,656 places** across the five boroughs. Each row carries its restroom evidence from every source in separate columns (`osm_*`, `official_*`, `refuge_*`), a `dohmh_food_service` flag (active DOHMH food service establishment; renamed from `likely_covered_pickup` in Phase 4), and summer/winter hourly open masks.
 
 Reproduce:
 ```bash
@@ -108,11 +108,11 @@ Two rounds, each a seeded random sample of 40 accepted matches plus 20 near-miss
 | `osm_toilets_access` | customers 136 · permissive 67 · yes 15 · public 15 · private 2 · no 1 |
 | `official_present` | 1,100 |
 | `refuge_present` | 1,098 |
-| `likely_covered_pickup` | 30,748 (DOHMH food service establishments; a legal attribute, not a restroom observation) |
+| `dohmh_food_service` | 30,748 active DOHMH food service establishments. *Renamed in Phase 4 from `likely_covered_pickup`: since Admin Code §20-1527 (Jan 26, 2026) the restroom right attaches to the pickup at any business, so this column says nothing about legal coverage.* |
 
 3,406 places have restroom evidence of any kind. That's 4% of the table, which is why Phase 3 needs its own hand audit as the test set.
 
 ## 5. Carried into later phases
 - **Phase 2**: report deserts under both "open later seasonally" readings. Join the Parks condition data (confirm that `csnumber` and `cs_id` are the same key first). Treat 73% of places as hours unknown.
 - **Phase 3**: OSM labels skew "yes" (restaurants 333 yes vs 18 no in the earlier Overpass check). Access labels are sparse (~230). Test on a stratified hand audit, not OSM labels. **Category is inconsistent across sources**: 17,243 restaurants found only in DOHMH have `category = dohmh_restaurant`, while matched ones carry OSM categories (`amenity=restaurant`, `amenity=cafe`, ...). Harmonize them, for example by mapping DOHMH cuisine to OSM-style classes, before using category as a feature or as the baseline's grouping.
-- **Phase 4**: `likely_covered_pickup` excludes 808 restaurants without coordinates and all food carts and trucks. 3,881 have never been inspected and may not be open yet.
+- **Phase 4**: `dohmh_food_service` excludes 808 restaurants without coordinates and all food carts and trucks. 3,881 have never been inspected and may not be open yet. *(Phase 4 found the delivery-worker right is per pickup, not per place: see `phase4_law_notes.md`.)*

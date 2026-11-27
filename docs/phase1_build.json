@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-11-27T00:22:16+00:00",
+  "built_at": "2026-11-27T01:48:30+00:00",
   "dohmh": {
     "establishments": 31556,
     "no_coords": 808,
@@ -77,7 +77,7 @@
     },
     "official_present": 1100,
     "refuge_present": 1098,
-    "likely_covered_pickup": 30748
+    "dohmh_food_service": 30748
   },
   "borough_counts": {
     "Manhattan": 27068,

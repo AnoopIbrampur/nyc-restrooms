@@ -21,6 +21,8 @@ Working name: **nyc-restrooms** (rename later). Three parts, built in phases; st
 | Google Places API (New) `restroom` field | Exists (Enterprise + Atmosphere tier) | **Not used.** Google's Places policy allows storing only `place_id` (indefinitely) and lat/lng (30 days); bans storing content and "creating content based on Google Maps Content." That rules out training labels and a stored map layer. Decision: build on open data only |
 
 ### Delivery-worker law: what it actually says (DCWP pages, read 2026-11-26)
+
+> **Correction (2026-11-27, Phase 4):** the summary below describes Local Law 117 of 2021 only. **Local Law 123 of 2025 added Admin Code §20-1527 (in effect Jan 26, 2026): any food service establishment *or other business* where a contracted delivery worker picks up goods must give that worker access to a toilet facility on the premises**, including a staff restroom if there's no customer restroom, unless reaching it means walking through a kitchen, food-prep, storage or dishwashing area, or creates an obvious health or safety risk. The right no longer depends on app contracts, so "likely covered, never must" is outdated. The right is per pickup, and the uncertainty is the exceptions. See `docs/phase4_law_notes.md`.
 - Effective Jan 24, 2022. Mechanism: apps must have a written agreement with each restaurant they list, and **the agreement must include bathroom access** for delivery workers picking up orders. Restaurants must comply with those agreements.
 - DCWP FAQ: "Workers must be allowed to use the bathroom at most pickup locations." "Restaurant" = all food service establishments (restaurants, food halls, carts, stands, trucks).
 - Exceptions: "limited exceptions for health or safety reasons" — not defined. Pages don't say whether a restaurant with no customer bathroom must provide one.
@@ -68,7 +70,7 @@ Working name: **nyc-restrooms** (rename later). Three parts, built in phases; st
 
 ## Phase 4 — Delivery-worker mode (≈1 week)
 - First read the Local Law 123/124 Legistar texts; update scope and wording.
-- Layer: all ~31.5k DOHMH food service establishments as "likely covered pickup locations," with the caveat that it depends on the restaurant being on a delivery app.
+- ~~Layer: all ~31.5k DOHMH food service establishments as "likely covered pickup locations"~~ (superseded: the right is per pickup at any business; the page states the rule and its exceptions instead of labeling places).
 - Rights panel: what the law says, $200 per denial, the DCWP complaint link, and the official multilingual card. Languages: English, Spanish, Mandarin, Bengali, French (matches the delivery workforce; reuse DCWP translations where possible).
 - Worker reports: "let me in" / "refused" per restaurant. Anonymous: no accounts, no stored identity, rate-limited.
 - **Publishing rule (defamation and safety)**: no single report goes public. Per-restaurant flags show only after N independent reports in a window; otherwise reports roll up to neighborhood-level "refusal rate." Restaurants can contest. Reports are not legal findings; say so.
@@ -89,7 +91,7 @@ Working name: **nyc-restrooms** (rename later). Three parts, built in phases; st
 ## Risks
 - OSM labels are thin and biased → hand audit as test set; category baseline as the floor.
 - Hours text is messy → parser with a confidence flag; low-confidence hours shown as "check hours."
-- Legal wording → always "likely covered," link to DCWP, read Legistar before Phase 4.
+- Legal wording → state the statute (§20-1527) and its exceptions, never label a specific place as "must" or "violating". Link the enacted text and DCWP.
 - Crowd reports can be abused or defame → thresholds, aggregation, contest path.
 - Google data not usable under its terms → open data only.
 

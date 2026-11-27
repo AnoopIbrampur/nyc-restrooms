@@ -2,7 +2,9 @@
 
 Labels stay per source (osm_*, official_*, refuge_*); nothing is merged into a single
 "access" value, so Phase 3 can tell where each label came from. Delivery-worker
-coverage is its own boolean (`likely_covered_pickup`), never an access tier.
+pickup status is its own boolean (`dohmh_food_service`: an active DOHMH food service
+establishment), never an access tier. It is NOT a legal-coverage flag: under Admin Code
+§20-1527 (2026) the restroom right attaches to the pickup, at any business (see Phase 4).
 """
 
 from __future__ import annotations
@@ -426,7 +428,7 @@ def build() -> dict:
 
     places["official_present"] = places["official_id"].notna()
     places["refuge_present"] = places["refuge_id"].notna()
-    places["likely_covered_pickup"] = places["camis"].notna()
+    places["dohmh_food_service"] = places["camis"].notna()
 
     # hours: official text first (it's about the restroom), else OSM opening_hours
     hs, hw, hc, hf, src = [], [], [], [], []
@@ -487,7 +489,7 @@ def build() -> dict:
         "osm_toilets_access": places["osm_toilets_access"].value_counts().to_dict(),
         "official_present": int(places["official_present"].sum()),
         "refuge_present": int(places["refuge_present"].sum()),
-        "likely_covered_pickup": int(places["likely_covered_pickup"].sum()),
+        "dohmh_food_service": int(places["dohmh_food_service"].sum()),
     }
     report["borough_counts"] = places["borough"].value_counts(dropna=False).to_dict()
 
