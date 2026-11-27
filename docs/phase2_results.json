@@ -1,0 +1,574 @@
+{
+  "restroom_counts": {
+    "primary": 1113,
+    "sensitivity": 1668,
+    "exploratory_sensitivity_no_near_official": 1325,
+    "purchase": 2153
+  },
+  "stations": 425,
+  "station_snap_m_max": 120.0,
+  "hexes": 7414,
+  "hexes_no_network": 493,
+  "H": {
+    "summer_A": {
+      "09:00": 0.1406,
+      "18:00": 0.2541,
+      "23:00": 0.8533
+    },
+    "summer_B": {
+      "09:00": 0.1406,
+      "18:00": 0.0748,
+      "23:00": 0.8533
+    },
+    "winter_A": {
+      "09:00": 0.1717,
+      "18:00": 0.2687,
+      "23:00": 0.8688
+    },
+    "winter_B": {
+      "09:00": 0.1717,
+      "18:00": 0.2687,
+      "23:00": 0.8688
+    }
+  },
+  "sensitivity": {
+    "summer_A": {
+      "09:00": 0.1107,
+      "18:00": 0.0953,
+      "23:00": 0.1916
+    },
+    "summer_B": {
+      "09:00": 0.1107,
+      "18:00": 0.0554,
+      "23:00": 0.1916
+    },
+    "winter_A": {
+      "09:00": 0.1188,
+      "18:00": 0.1075,
+      "23:00": 0.1904
+    },
+    "winter_B": {
+      "09:00": 0.1188,
+      "18:00": 0.1075,
+      "23:00": 0.1904
+    }
+  },
+  "exploratory_sensitivity_no_near_official": {
+    "summer_A": {
+      "09:00": 0.1181,
+      "18:00": 0.2078,
+      "23:00": 0.5572
+    },
+    "summer_B": {
+      "09:00": 0.1181,
+      "18:00": 0.0582,
+      "23:00": 0.5572
+    },
+    "winter_A": {
+      "09:00": 0.1384,
+      "18:00": 0.2222,
+      "23:00": 0.5592
+    },
+    "winter_B": {
+      "09:00": 0.1384,
+      "18:00": 0.2222,
+      "23:00": 0.5592
+    }
+  },
+  "purchase": {
+    "summer_A": {
+      "09:00": 0.0828,
+      "18:00": 0.0644,
+      "23:00": 0.2178
+    },
+    "summer_B": {
+      "09:00": 0.0828,
+      "18:00": 0.0273,
+      "23:00": 0.2178
+    },
+    "winter_A": {
+      "09:00": 0.1,
+      "18:00": 0.0641,
+      "23:00": 0.2148
+    },
+    "winter_B": {
+      "09:00": 0.1,
+      "18:00": 0.0641,
+      "23:00": 0.2148
+    }
+  },
+  "threshold_curve": {
+    "summer_A": {
+      "5": {
+        "09:00": 0.6294,
+        "18:00": 0.5969,
+        "23:00": 0.9954
+      },
+      "10": {
+        "09:00": 0.1406,
+        "18:00": 0.2541,
+        "23:00": 0.8533
+      },
+      "15": {
+        "09:00": 0.0271,
+        "18:00": 0.1258,
+        "23:00": 0.6774
+      }
+    },
+    "summer_B": {
+      "5": {
+        "09:00": 0.6294,
+        "18:00": 0.507,
+        "23:00": 0.9954
+      },
+      "10": {
+        "09:00": 0.1406,
+        "18:00": 0.0748,
+        "23:00": 0.8533
+      },
+      "15": {
+        "09:00": 0.0271,
+        "18:00": 0.0101,
+        "23:00": 0.6774
+      }
+    },
+    "winter_A": {
+      "5": {
+        "09:00": 0.6672,
+        "18:00": 0.6189,
+        "23:00": 0.9957
+      },
+      "10": {
+        "09:00": 0.1717,
+        "18:00": 0.2687,
+        "23:00": 0.8688
+      },
+      "15": {
+        "09:00": 0.0394,
+        "18:00": 0.1311,
+        "23:00": 0.705
+      }
+    },
+    "winter_B": {
+      "5": {
+        "09:00": 0.6672,
+        "18:00": 0.6189,
+        "23:00": 0.9957
+      },
+      "10": {
+        "09:00": 0.1717,
+        "18:00": 0.2687,
+        "23:00": 0.8688
+      },
+      "15": {
+        "09:00": 0.0394,
+        "18:00": 0.1311,
+        "23:00": 0.705
+      }
+    }
+  },
+  "hour_profile": {
+    "summer_A": [
+      0.8858,
+      0.9878,
+      0.9924,
+      0.9929,
+      0.9938,
+      0.9843,
+      0.9066,
+      0.6813,
+      0.151,
+      0.1406,
+      0.0892,
+      0.0782,
+      0.0697,
+      0.0634,
+      0.0598,
+      0.0521,
+      0.1718,
+      0.1682,
+      0.2541,
+      0.3588,
+      0.4709,
+      0.5237,
+      0.6874,
+      0.8533
+    ],
+    "summer_B": [
+      0.8858,
+      0.9878,
+      0.9924,
+      0.9929,
+      0.9938,
+      0.9843,
+      0.9066,
+      0.6813,
+      0.151,
+      0.1406,
+      0.0892,
+      0.0782,
+      0.0697,
+      0.0634,
+      0.0598,
+      0.0521,
+      0.0516,
+      0.0498,
+      0.0748,
+      0.0886,
+      0.4709,
+      0.5237,
+      0.6874,
+      0.8533
+    ],
+    "winter_A": [
+      0.8964,
+      0.9863,
+      0.9913,
+      0.9931,
+      0.9945,
+      0.9827,
+      0.9092,
+      0.6982,
+      0.1815,
+      0.1717,
+      0.1163,
+      0.1064,
+      0.0829,
+      0.0773,
+      0.076,
+      0.0669,
+      0.1822,
+      0.1853,
+      0.2687,
+      0.38,
+      0.4823,
+      0.5469,
+      0.7682,
+      0.8688
+    ],
+    "winter_B": [
+      0.8964,
+      0.9863,
+      0.9913,
+      0.9931,
+      0.9945,
+      0.9827,
+      0.9092,
+      0.6982,
+      0.1815,
+      0.1717,
+      0.1163,
+      0.1064,
+      0.0829,
+      0.0773,
+      0.076,
+      0.0669,
+      0.1822,
+      0.1853,
+      0.2687,
+      0.38,
+      0.4823,
+      0.5469,
+      0.7682,
+      0.8688
+    ]
+  },
+  "worst_20": [
+    {
+      "station_complex": "Canal St (6,J,Z,N,Q,R,W)",
+      "borough": "Manhattan",
+      "weekday_entries": 36862.0,
+      "stranded_entries_per_weekday": 23417.0,
+      "share_stranded": 0.635,
+      "minutes_9am": 5.4,
+      "minutes_6pm": 10.9,
+      "minutes_11pm": 21.4
+    },
+    {
+      "station_complex": "Jackson Hts-Roosevelt Av/74 St-Broadway (7,E,F,M,R)",
+      "borough": "Queens",
+      "weekday_entries": 45543.0,
+      "stranded_entries_per_weekday": 22718.0,
+      "share_stranded": 0.499,
+      "minutes_9am": 6.7,
+      "minutes_6pm": 13.1,
+      "minutes_11pm": 57.9
+    },
+    {
+      "station_complex": "Crown Hts-Utica Av (3,4)",
+      "borough": "Brooklyn",
+      "weekday_entries": 16478.0,
+      "stranded_entries_per_weekday": 16478.0,
+      "share_stranded": 1.0,
+      "minutes_9am": 10.4,
+      "minutes_6pm": 38.0,
+      "minutes_11pm": 90.2
+    },
+    {
+      "station_complex": "Flushing-Main St (7)",
+      "borough": "Queens",
+      "weekday_entries": 45253.0,
+      "stranded_entries_per_weekday": 15476.0,
+      "share_stranded": 0.342,
+      "minutes_9am": 8.0,
+      "minutes_6pm": 3.5,
+      "minutes_11pm": 47.4
+    },
+    {
+      "station_complex": "Bedford Av (L)",
+      "borough": "Brooklyn",
+      "weekday_entries": 27907.0,
+      "stranded_entries_per_weekday": 14953.0,
+      "share_stranded": 0.536,
+      "minutes_9am": 8.5,
+      "minutes_6pm": 10.1,
+      "minutes_11pm": 10.6
+    },
+    {
+      "station_complex": "14 St/6 Av (1,2,3,L,F,M)",
+      "borough": "Manhattan",
+      "weekday_entries": 34345.0,
+      "stranded_entries_per_weekday": 13916.0,
+      "share_stranded": 0.405,
+      "minutes_9am": 10.7,
+      "minutes_6pm": 6.2,
+      "minutes_11pm": 17.0
+    },
+    {
+      "station_complex": "90 St-Elmhurst Av (7)",
+      "borough": "Queens",
+      "weekday_entries": 13187.0,
+      "stranded_entries_per_weekday": 13187.0,
+      "share_stranded": 1.0,
+      "minutes_9am": 12.4,
+      "minutes_6pm": 16.1,
+      "minutes_11pm": 41.1
+    },
+    {
+      "station_complex": "Jamaica-179 St (F)",
+      "borough": "Queens",
+      "weekday_entries": 13052.0,
+      "stranded_entries_per_weekday": 13052.0,
+      "share_stranded": 1.0,
+      "minutes_9am": 17.1,
+      "minutes_6pm": 18.2,
+      "minutes_11pm": 30.6
+    },
+    {
+      "station_complex": "W 4 St-Wash Sq (A,C,E,B,D,F,M)",
+      "borough": "Manhattan",
+      "weekday_entries": 36744.0,
+      "stranded_entries_per_weekday": 12510.0,
+      "share_stranded": 0.34,
+      "minutes_9am": 4.4,
+      "minutes_6pm": 4.9,
+      "minutes_11pm": 13.3
+    },
+    {
+      "station_complex": "36 St (D,N,R)",
+      "borough": "Brooklyn",
+      "weekday_entries": 12235.0,
+      "stranded_entries_per_weekday": 12235.0,
+      "share_stranded": 1.0,
+      "minutes_9am": 14.8,
+      "minutes_6pm": 17.1,
+      "minutes_11pm": 18.0
+    },
+    {
+      "station_complex": "Jamaica Center-Parsons/Archer (E,J,Z)",
+      "borough": "Queens",
+      "weekday_entries": 20686.0,
+      "stranded_entries_per_weekday": 11773.0,
+      "share_stranded": 0.569,
+      "minutes_9am": 4.5,
+      "minutes_6pm": 10.1,
+      "minutes_11pm": 59.4
+    },
+    {
+      "station_complex": "Court Sq-23 St (7,E,F,G)",
+      "borough": "Queens",
+      "weekday_entries": 21889.0,
+      "stranded_entries_per_weekday": 11230.0,
+      "share_stranded": 0.513,
+      "minutes_9am": 5.1,
+      "minutes_6pm": 15.6,
+      "minutes_11pm": 47.3
+    },
+    {
+      "station_complex": "86 St (Q)",
+      "borough": "Manhattan",
+      "weekday_entries": 18928.0,
+      "stranded_entries_per_weekday": 11213.0,
+      "share_stranded": 0.592,
+      "minutes_9am": 11.6,
+      "minutes_6pm": 9.4,
+      "minutes_11pm": 53.4
+    },
+    {
+      "station_complex": "Queensboro Plaza (7,N,W)",
+      "borough": "Queens",
+      "weekday_entries": 10895.0,
+      "stranded_entries_per_weekday": 10895.0,
+      "share_stranded": 1.0,
+      "minutes_9am": 12.8,
+      "minutes_6pm": 11.0,
+      "minutes_11pm": 55.8
+    },
+    {
+      "station_complex": "Grand St (B,D)",
+      "borough": "Manhattan",
+      "weekday_entries": 18671.0,
+      "stranded_entries_per_weekday": 10885.0,
+      "share_stranded": 0.583,
+      "minutes_9am": 2.3,
+      "minutes_6pm": 10.2,
+      "minutes_11pm": 29.0
+    },
+    {
+      "station_complex": "Canal St (A,C,E)",
+      "borough": "Manhattan",
+      "weekday_entries": 14840.0,
+      "stranded_entries_per_weekday": 9956.0,
+      "share_stranded": 0.671,
+      "minutes_9am": 8.9,
+      "minutes_6pm": 10.7,
+      "minutes_11pm": 15.9
+    },
+    {
+      "station_complex": "Atlantic Av-Barclays Ctr (2,3,4,5,B,D,N,Q,R)",
+      "borough": "Brooklyn",
+      "weekday_entries": 33304.0,
+      "stranded_entries_per_weekday": 9386.0,
+      "share_stranded": 0.282,
+      "minutes_9am": 1.7,
+      "minutes_6pm": 1.7,
+      "minutes_11pm": 70.3
+    },
+    {
+      "station_complex": "Vernon Blvd-Jackson Av (7)",
+      "borough": "Queens",
+      "weekday_entries": 14589.0,
+      "stranded_entries_per_weekday": 9369.0,
+      "share_stranded": 0.642,
+      "minutes_9am": 11.9,
+      "minutes_6pm": 10.0,
+      "minutes_11pm": 38.6
+    },
+    {
+      "station_complex": "77 St (6)",
+      "borough": "Manhattan",
+      "weekday_entries": 20996.0,
+      "stranded_entries_per_weekday": 9230.0,
+      "share_stranded": 0.44,
+      "minutes_9am": 11.0,
+      "minutes_6pm": 6.4,
+      "minutes_11pm": 38.6
+    },
+    {
+      "station_complex": "Grand Av-Newtown (M,R)",
+      "borough": "Queens",
+      "weekday_entries": 13773.0,
+      "stranded_entries_per_weekday": 9161.0,
+      "share_stranded": 0.665,
+      "minutes_9am": 10.8,
+      "minutes_6pm": 29.4,
+      "minutes_11pm": 58.8
+    }
+  ],
+  "borough": {
+    "summer_A": {
+      "Manhattan": {
+        "09:00": 0.0636,
+        "18:00": 0.099,
+        "23:00": 0.7936
+      },
+      "Brooklyn": {
+        "09:00": 0.2024,
+        "18:00": 0.6324,
+        "23:00": 0.9877
+      },
+      "Queens": {
+        "09:00": 0.2421,
+        "18:00": 0.6255,
+        "23:00": 1.0
+      },
+      "Bronx": {
+        "09:00": 0.1453,
+        "18:00": 0.5884,
+        "23:00": 0.9509
+      }
+    },
+    "summer_B": {
+      "Manhattan": {
+        "09:00": 0.0636,
+        "18:00": 0.0217,
+        "23:00": 0.7936
+      },
+      "Brooklyn": {
+        "09:00": 0.2024,
+        "18:00": 0.2202,
+        "23:00": 0.9877
+      },
+      "Queens": {
+        "09:00": 0.2421,
+        "18:00": 0.1985,
+        "23:00": 1.0
+      },
+      "Bronx": {
+        "09:00": 0.1453,
+        "18:00": 0.116,
+        "23:00": 0.9509
+      }
+    },
+    "winter_A": {
+      "Manhattan": {
+        "09:00": 0.0923,
+        "18:00": 0.1228,
+        "23:00": 0.8181
+      },
+      "Brooklyn": {
+        "09:00": 0.2133,
+        "18:00": 0.6216,
+        "23:00": 1.0
+      },
+      "Queens": {
+        "09:00": 0.3159,
+        "18:00": 0.6239,
+        "23:00": 1.0
+      },
+      "Bronx": {
+        "09:00": 0.1501,
+        "18:00": 0.5825,
+        "23:00": 0.9371
+      }
+    },
+    "winter_B": {
+      "Manhattan": {
+        "09:00": 0.0923,
+        "18:00": 0.1228,
+        "23:00": 0.8181
+      },
+      "Brooklyn": {
+        "09:00": 0.2133,
+        "18:00": 0.6216,
+        "23:00": 1.0
+      },
+      "Queens": {
+        "09:00": 0.3159,
+        "18:00": 0.6239,
+        "23:00": 1.0
+      },
+      "Bronx": {
+        "09:00": 0.1501,
+        "18:00": 0.5825,
+        "23:00": 0.9371
+      }
+    }
+  },
+  "expectation_23_minus_09_pp": {
+    "summer_A": 71.3,
+    "summer_B": 71.3,
+    "winter_A": 69.7,
+    "winter_B": 69.7
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "nodes": 1253751,
+  "edges": 1555814,
+  "components": 3077,
+  "components_kept": 6,
+  "nodes_kept": 1226360,
+  "largest_components": [
+    976973,
+    228376,
+    11470,
+    6253,
+    2036,
+    1252
+  ],
+  "checks": {
+    "detour_pairs": 1998,
+    "detour_median": 1.21,
+    "detour_p90": 1.469,
+    "detour_p99": 4.769,
+    "detour_share_over_3": 0.012,
+    "unreachable_pairs": 0,
+    "bridges": {
+      "Brooklyn": {
+        "network_m": 2010,
+        "straight_m": 1932,
+        "connected": true
+      },
+      "Manhattan": {
+        "network_m": 2553,
+        "straight_m": 1733,
+        "connected": true
+      },
+      "Williamsburg": {
+        "network_m": 2498,
+        "straight_m": 2354,
+        "connected": true
+      },
+      "Queensboro": {
+        "network_m": 2455,
+        "straight_m": 2058,
+        "connected": true
+      }
+    },
+    "note_over_3": "inspected 2026-11-26: water crossings with no walkable bridge (Throgs Neck/Whitestone, East River at Astoria)"
+  }
+}

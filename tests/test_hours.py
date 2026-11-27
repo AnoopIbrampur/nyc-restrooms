@@ -181,3 +181,13 @@ def test_osm_sunset_uses_nyc_sun():
 def test_osm_bad():
     assert parse_osm("garbage text").confidence == "none"
     assert parse_osm(None).confidence == "none"
+
+
+def test_osm_weekday_comma_space_is_a_list_not_separate_rules():
+    h = parse_osm("Mo, We, Fr 10:00-18:00; Tu 13:00-20:00; Th 10:00-20:00; Sa 10:00-17:00")
+    assert days(h.summer) == "M:10-18 T:13-20 W:10-18 T:10-20 F:10-18 S:10-17 S:x"
+    assert "weekday_comma_fixed" in h.flags
+    h = parse_osm("Mo-Fr 11:00-23:00; Sa, Su 12:00-23:00")
+    assert days(h.summer) == "M:11-23 T:11-23 W:11-23 T:11-23 F:11-23 S:12-23 S:12-23"
+    # a real additional-rule ", " (not between weekdays) is left alone
+    assert "weekday_comma_fixed" not in parse_osm("Mo-Fr 08:00-12:00, 13:00-17:00").flags

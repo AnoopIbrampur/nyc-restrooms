@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="handmade">
+  <!-- a 3-node street A-B-C going east (~84 m per step at 40.75N: 0.001 deg lon) -->
+  <node id="1" lat="40.75" lon="-73.990" version="1"/>
+  <node id="2" lat="40.75" lon="-73.989" version="1"/>
+  <node id="3" lat="40.75" lon="-73.988" version="1"/>
+  <way id="10" version="1"><nd ref="1"/><nd ref="2"/><nd ref="3"/><tag k="highway" v="residential"/></way>
+  <!-- the same segment B-C mapped again as a sidewalk: must not double its length -->
+  <way id="11" version="1"><nd ref="2"/><nd ref="3"/><tag k="highway" v="footway"/></way>
+  <!-- motorway shortcut A-C: not walkable -->
+  <way id="12" version="1"><nd ref="1"/><nd ref="3"/><tag k="highway" v="motorway"/></way>
+  <!-- foot=no path from C to D, private driveway D-E: both excluded -->
+  <node id="4" lat="40.751" lon="-73.988" version="1"/>
+  <node id="5" lat="40.752" lon="-73.988" version="1"/>
+  <way id="13" version="1"><nd ref="3"/><nd ref="4"/><tag k="highway" v="path"/><tag k="foot" v="no"/></way>
+  <way id="14" version="1"><nd ref="4"/><nd ref="5"/><tag k="highway" v="service"/><tag k="access" v="private"/></way>
+  <!-- trunk with sidewalk tag foot=yes: walkable, C-F -->
+  <node id="6" lat="40.749" lon="-73.988" version="1"/>
+  <way id="15" version="1"><nd ref="3"/><nd ref="6"/><tag k="highway" v="trunk"/><tag k="foot" v="yes"/></way>
+  <!-- tiny separate fragment G-H -->
+  <node id="7" lat="40.76" lon="-73.95" version="1"/>
+  <node id="8" lat="40.76" lon="-73.949" version="1"/>
+  <way id="16" version="1"><nd ref="7"/><nd ref="8"/><tag k="highway" v="footway"/></way>
+</osm>

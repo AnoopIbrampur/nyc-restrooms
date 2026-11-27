@@ -1,0 +1,822 @@
+place_id,name,prop_id,condition,inspected,stations_rated
+osm:node:348454463,Pilgrim Hill & Conservatory Water,M010-ZN16,A,2026-06-09,1.0
+osm:node:357612599,Zimmerman Memorial Playground,X087,N,2025-12-02,1.0
+osm:node:357633899,Parkside Playground,X162,A,2026-06-05,1.0
+osm:node:357633918,Susan Caserta Playground,X160,U,2026-06-04,1.0
+osm:node:357633936,Agnes Haywood Playground,X169,A,2026-08-10,1.0
+osm:node:357634994,Mosholu Playground,X197,A,2026-07-08,1.0
+osm:node:357635090,Abigail Playground,X216,U,2026-07-13,1.0
+osm:node:357635137,Captain Rivera Playground,X194,A,2026-06-15,1.0
+osm:node:357635259,Hunts Point Playground,X113,U,2026-05-18,1.0
+osm:node:357638276,Eugenio Maria De Hostos Playground,B358,N,2026-06-04,1.0
+osm:node:357650406,Bleecker Playground,M251,U,2026-06-08,1.0
+osm:node:357650686,Sol Bloom Playground,M244,N,2026-05-04,1.0
+osm:node:410224440,Frawleys' Run,M010,,,
+osm:node:466551000,Rockaway Beach 07b,Q163-ZN07B,N,2026-08-24,1.0
+osm:node:617378103,Carnegie Playground,B025-01,A,2026-04-16,1.0
+osm:node:748726581,Sherman Creek,,,,
+osm:node:748726588,Wright Brothers Playground,M234,A,2026-08-27,1.0
+osm:node:766771663,Owl's Head Park,B066,N,2026-08-01,1.0
+osm:node:1310874081,Playground 123,M056,,,
+osm:node:1332860747,Claremont Playground,M071,,,
+osm:node:1425562631,Passerelle,Q099,,,
+osm:node:1452912301,Van Cortlandt Classic Playground,X092,,,
+osm:node:1737296851,Hudson River Park Pier 25,,,,
+osm:node:1740891617,Bethesda Terrace,M010-ZN12&13,,,1.0
+osm:node:1740891627,The Ramble,M010,,,
+osm:node:1915655233,The High Line Zone 1,M360-ZN01,,,2.0
+osm:node:1999252648,McCarren Park Zone 1,B058,,,
+osm:node:2094252551,Rockaway Beach 06b,Q163-ZN06B,N,2026-08-24,1.0
+osm:node:2094252567,Rockaway Beach 05b,Q163,,,
+osm:node:2312963423,Ancient Playground,M010-145,,,2.0
+osm:node:2453678573,Alley Springfield,Q001-99,A,2026-08-31,1.0
+osm:node:2498449629,Bronx Shore Fields,M104-ZN01,N,2026-08-22,1.0
+osm:node:2564481338,Marine Park Zone 1,B057,,,
+osm:node:2807416301,Raymond Bush Playground,B216,A,2026-05-04,1.0
+osm:node:2865415565,Alley Pond Park Zone 2,Q001-ZN02,N,2026-08-15,1.0
+osm:node:2895921311,East River Waterfront Esplanade Zone 1,M391-ZN01,U,2026-07-16,1.0
+osm:node:3003918339,Sheep Meadow,M010-ZN10&11,A,2026-04-16,1.0
+osm:node:3146474829,High Line Food And Other Facilities,M360-ZN01,,,2.0
+osm:node:3264659080,Rockaway Beach 04c,,,,
+osm:node:3351085187,Brooklyn Bridge Park Zone 6,B431-ZN06,A,2026-08-13,1.0
+osm:node:3401194360,Marine Park Zone 6,B057,,,
+osm:node:3528538753,Fulton Park,B038,A,2026-05-11,1.0
+osm:node:3669154898,Tavern on the Green public restrooms,M010,,,
+osm:node:3706396010,Castle Clinton National Monument,,,,
+osm:node:3720681573,The Ramble,M010-ZN18&19,,,2.0
+osm:node:3720682054,Reservoir (Northwest),M010,,,
+osm:node:3735208280,Stadium Area,M104,,,
+osm:node:3735208281,Sunken Meadow,M104-ZN02,,,2.0
+osm:node:3735213245,Sunken Meadow,M104,,,
+osm:node:3735230008,Wards Meadow,M107,,,
+osm:node:3821172935,Bryant Park Public Restroom,M008,A,2026-04-10,1.0
+osm:node:3876362257,Chelsea Piers at Pier 61,,,,
+osm:node:4105668197,Prospect Park Lakeside Center,B073,,,
+osm:node:4111168996,Colonel Charles Young Playground,M186,A,2026-07-22,1.0
+osm:node:4252857391,Middle Long Meadow,B073,,,
+osm:node:4396314245,Van Cortlandt Stadium,X092,,,
+osm:node:4396410027,Chelsea Park Toilets,M011,A,2026-06-02,1.0
+osm:node:4412752840,South Beach Zone 2,R046,,,
+osm:node:4412752873,South Beach Zone 1,R046,,,
+osm:node:4501525471,Brooklyn Bridge Park - Pier 6 - Dog Run,,,,
+osm:node:4744356322,Hunter's Point South Park Zone 1,Q471,,,1.0
+osm:node:4879541822,Willink Hill,B073,,,
+osm:node:4946467727,Meadow Lake NE,Q099-ZN25,U,2026-05-21,1.0
+osm:node:5102241925,Juniper North Playground Tennis,Q102-02,A,2026-07-27,1.0
+osm:node:5136637551,Claremont Zone 1,X008,,,
+osm:node:5141296751,Mt Prospect Park Playground,B159,,,
+osm:node:5515477253,Leif Ericson Park Playground,B052,,,2.0
+osm:node:5718054390,Cadman Plaza Park,B113,,,
+osm:node:5932291045,Washington Park,B111,N,2026-08-22,1.0
+osm:node:5967511485,Coney Island Beach Zone 5b,B169-ZN05B,N,2026-04-28,1.0
+osm:node:5980549379,North Riverside Blvd and Slopes,M353,,,
+osm:node:6946750317,Columbus Park,M015,,,2.0
+osm:node:7635633000,Soundview Park,X118,,,
+osm:node:7635645547,Soundview Park Zone 4,X118,,,
+osm:node:8285084759,College Point Blvd Soccer Fields,Q099,,,
+osm:node:8902027263,John Street Snack Bar,,,,
+osm:node:8981032239,John J Carty Park,B210W,A,2026-07-14,1.0
+osm:node:9196017981,Dyckman Marina Restaurant,M029,,,
+osm:node:9426304534,Brooklyn Bridge Park Pier 5 - Boathouse/Uplands,,,,
+osm:node:9426304535,Brooklyn Bridge Park Pier 2 - Uplands,,,,
+osm:node:9461192295,Playground One Forty Nine CIL,M014-03,A,2026-07-10,1.0
+osm:node:9680980728,Pier 57 Rooftop Park,,,,
+osm:node:9709717400,Manhattan Beach Zone 2,B251-ZN02,N,2026-08-08,1.0
+osm:node:9882238978,Clove Lakes Park Zone 1,R005-ZN01,,,2.0
+osm:node:9939213717,East Parade Grounds,B068,,,
+osm:node:10151594924,Playground,Q024,,,
+osm:node:10565922787,Kaiser Park Zone 1,B129-ZN01,A,2026-08-14,1.0
+osm:node:10659606024,Sara D. Roosevelt Park,M105,N,2026-07-18,2.0
+osm:node:10674855590,Carousel,Q015_temp,,,
+osm:node:10875921704,Queensbridge Park,Q104,N,2026-08-01,2.0
+osm:node:11093865372,Tennis Courts - Forest Parkway,Q015-ZN07,A,2026-07-09,1.0
+osm:node:11147215852,Dry Harbor Playground,Q015-08,N,2026-08-06,1.0
+osm:node:11148387335,Ferry Point Park Zone 2,X126-ZN02,N,2026-05-31,1.0
+osm:node:11433600371,101st St. Soccer Field,M071,,,
+osm:node:11610835267,Dyckman Street Marina,M028,,,
+osm:node:11644432591,Fort Washington Park Zone 4,M028,,,
+osm:node:11838414737,Calvert Vaux Park Zone 2,B125,,,
+osm:node:11952901697,Conference House Park Zone 2,R006,,,
+osm:node:11959024515,Fairview Park Zone 1,R153,,,
+osm:node:12151903743,"Van Cortlandt Mansion, Tennis Courts, Memorial Grove",X092,,,
+osm:node:12772759431,North Park Phase 1,R017-ZN02,A,2026-05-20,1.0
+osm:node:12847084637,Carl Schurz Main Lawn,M081-02,A,2026-08-06,1.0
+osm:node:13202631900,Red Hook Park Zone 3,B126,,,
+osm:node:13260282003,Maspeth Park,Q510,U,2026-08-24,1.0
+osm:node:13564503616,Devoe Park,X013,,,
+osm:node:13991267104,Pelham South Park Headquarters,X039-ZN02,N,2026-08-01,1.0
+osm:node:14078908766,Orchard Bch. Pavilion,X039-ZN18,,,2.0
+osm:node:14078908767,Orchard Beach Snack Bars & Mobile Units,X039-ZN18,,,2.0
+osm:node:14165302923,Orchard Bch. Pavilion,X039-ZN18,,,2.0
+osm:node:14165302937,Twin Island,X039_temp1,,,
+osm:node:14202239797,Battery Park City Zone 1,M283-ZN01,A,2026-07-07,1.0
+osm:node:14206881868,Juniper Valley Park Zone 1,Q102-ZN01,N,2026-08-01,1.0
+osm:way:22727025,Bryant Park,M008,A,2026-04-10,1.0
+osm:way:22899302,Washington Square Park,M098,,,
+osm:way:22903972,Chelsea Waterside Park,,,,
+osm:way:22926980,Washington Market Park,M308,U,2026-05-11,1.0
+osm:way:22941918,DeWitt Clinton Park,M022,U,2026-05-19,1.0
+osm:way:22961821,Corporal John A. Seravalli Playground,M237,A,2026-07-28,1.0
+osm:way:25154401,Harvey Park,Q089B-01,N,2026-04-13,1.0
+osm:way:25162896,Tompkins Square Park,M088,,,2.0
+osm:way:25163359,Raymond O'Conner Park,Q103,A,2026-06-11,1.0
+osm:way:25355909,Murray Playground,Q141,A,2026-08-07,1.0
+osm:way:25430809,Hoffman Park,Q360N,N,2026-06-22,1.0
+osm:way:25691045,Kissena Golf Course,Q024-G01,,,1.0
+osm:way:25703012,Cunningham Park,Q021-ZN01,,,2.0
+osm:way:30432711,Douglaston Golf Course,Q411-G01,,,1.0
+osm:way:33406924,Susan Smith McKinney Steward Park,B223,,,
+osm:way:33819642,Monsignor McGolrick Park,B114,,,1.0
+osm:way:33900582,South Shore Golf Course,R104-G01,,,1.0
+osm:way:34196973,Luis R Lopez Playground,R125,A,2026-04-30,1.0
+osm:way:34197469,Midland Playground,R038,A,2026-03-19,1.0
+osm:way:34900188,Walker Park,R015,A,2026-04-30,1.0
+osm:way:34903700,Rev. Dr. Maggie Howard Playground,R061,A,2026-08-18,1.0
+osm:way:34965353,Corporal Thompson Park,R109,,,1.0
+osm:way:34966565,Christopher J. Igneri Playground,R064,A,2026-08-10,1.0
+osm:way:34968694,Prall Playground,R105,N,2026-04-13,1.0
+osm:way:34968930,Austin J. McDonald Playground,R034,A,2026-04-23,1.0
+osm:way:34988262,Mahoney Playground,R025,A,2026-05-11,1.0
+osm:way:35017760,Nicholas de Matti Playground,R035,A,2026-08-21,1.0
+osm:way:35018232,Tappen Park,R028,N,2025-08-18,1.0
+osm:way:35090445,Dugan Playground,R026,A,2026-04-16,1.0
+osm:way:35275860,The Big Park,R068,N,2026-07-25,1.0
+osm:way:35577692,Terrace Playground,R069,A,2026-06-04,1.0
+osm:way:35578768,Levy Playground,R033,U,2026-07-17,1.0
+osm:way:35580275,Jennifer's Playground,R114,A,2026-06-12,1.0
+osm:way:37075223,Coffey Park,B077-01,A,2026-04-10,1.0
+osm:way:40416347,Carroll Park,B019,A,2026-06-01,1.0
+osm:way:43221632,Dean Playground,B232,A,2026-06-22,1.0
+osm:way:48997912,Jaime Campiz Playground,B223,,,
+osm:way:53807362,Schmul Park,R045,,,
+osm:way:56760379,Brower Park,B012,A,2026-08-21,1.0
+osm:way:61242143,McKinley Park,B060,,,1.0
+osm:way:66374787,Columbus Park,M015,,,2.0
+osm:way:75118604,Van Cortlandt Stadium,X092,,,
+osm:way:77901814,James Forten Playground,B161,A,2026-08-31,1.0
+osm:way:92736192,Greenpoint Playground,B043,A,2026-08-27,1.0
+osm:way:100219344,Seth Low Playground,B100,A,2026-08-14,1.0
+osm:way:101123081,Coney Island Beach,B169,,,
+osm:way:104078386,Bennett Park,M009,A,2026-04-17,1.0
+osm:way:108144471,Pratt Playground,B292,A,2026-08-20,1.0
+osm:way:108159407,Thomas Jefferson Park,M047,N,2026-07-11,1.0
+osm:way:108235832,Corlears Hook Park,M017,U,2026-06-22,1.0
+osm:way:108235836,Seward Park,M082,A,2026-08-10,1.0
+osm:way:108237827,Wallenberg Playground,M037,,,
+osm:way:108239585,Jacob H. Schiff Playground,M223,A,2026-07-27,1.0
+osm:way:108239588,Alexander Hamilton Playground,M041,U,2026-08-26,1.0
+osm:way:109328319,Tompkins Square Pool,M088,,,2.0
+osm:way:109441096,Underwood Park,B259,U,2026-05-21,1.0
+osm:way:112168184,Green Central Knoll,B395,A,2026-04-20,1.0
+osm:way:113727158,College Point Fields,Q476,N,2026-07-23,1.0
+osm:way:113727168,Whitestone Playground,Q343,A,2026-07-15,1.0
+osm:way:113727169,John Golden Park,Q012B,U,2026-06-10,1.0
+osm:way:113727170,Cadwallader Colden Playground,Q347,A,2026-07-24,1.0
+osm:way:113757309,Grover Cleveland Playground,Q002,A,2026-05-04,1.0
+osm:way:118116798,Pier 84,,,,
+osm:way:118524660,Alice Kornegay Triangle,M208A,A,2026-08-27,1.0
+osm:way:118524664,Renaissance Playground,M245,A,2026-06-05,1.0
+osm:way:118524668,Howard Bennett Playground,M217,A,2026-04-28,1.0
+osm:way:118524669,Moore Playground,,,,
+osm:way:118524677,Frederick Johnson Park,M159,A,2026-08-27,1.0
+osm:way:118524678,Abraham Lincoln Playground,M193,U,2026-05-05,1.0
+osm:way:118524689,Holcombe Rucker Park,M216,A,2026-04-06,1.0
+osm:way:118729387,North Meadow Recreation Center,M010-ZN36,A,2026-08-04,2.0
+osm:way:118987685,Saint Andrews Playground,B225,N,2026-06-27,1.0
+osm:way:128582381,Hecksher Playground,M010-031,,,2.0
+osm:way:130503727,Saratoga Park,B079,A,2026-04-20,1.0
+osm:way:134158685,Travers Park,Q303,A,2026-05-18,1.0
+osm:way:134164229,Dutch Kills Playground,Q218,A,2026-05-04,1.0
+osm:way:143295853,Torsney/Lou Lodati Playground,Q340,A,2026-08-07,1.0
+osm:way:143296810,Lawrence Virgilio Playground,Q031,A,2026-07-06,1.0
+osm:way:143928485,Lance Corporal Thomas P Noonan Playground,Q044,A,2026-04-27,1.0
+osm:way:151267231,Elijah Stroud Playground,B350,A,2026-07-01,1.0
+osm:way:154374795,Maria Hernandez Park,B016,A,2026-07-23,1.0
+osm:way:156948911,(St. Vartan Park Playground) Children's Play Area,M076,A,2026-05-20,1.0
+osm:way:160754300,Hoyt Playground,Q066F,A,2026-08-24,1.0
+osm:way:160903868,McKinley Playground,M259,A,2026-07-20,1.0
+osm:way:165673075,Imagination Playground,M386,A,2026-06-12,1.0
+osm:way:170606155,Benson Playground,B277,U,2026-07-28,1.0
+osm:way:170607834,Garibaldi Playground Children's Play Area,B158,N,2026-07-02,1.0
+osm:way:171805412,Luther Gulick Playground,M065,A,2026-06-04,1.0
+osm:way:180330431,Oracle Playground,B300,A,2026-07-13,1.0
+osm:way:180338069,Fort Greene Playground,B032,,,
+osm:way:181197314,Lindower Park,B329,,,1.0
+osm:way:183933490,Seba Playground,B057,,,
+osm:way:184676319,Bill Brown Playground,B109,N,2026-07-18,1.0
+osm:way:185010170,Bensonhurst Park Childrens Play Area,B007,N,2026-08-08,1.0
+osm:way:185148215,Playground 286,B306,U,2026-04-10,1.0
+osm:way:185190925,Curtis Playground,B352,U,2026-04-07,1.0
+osm:way:185193622,Glenwood Playground,B236,U,2026-08-27,1.0
+osm:way:191315602,Sixteen Sycamores Playground,B137,U,2026-05-21,1.0
+osm:way:191317113,McLaughlin Park,B061,A,2026-07-13,1.0
+osm:way:194212578,Tecumseh Playground,M219,A,2026-08-14,1.0
+osm:way:194722293,Payson Playground,M042-01,N,2026-05-01,1.0
+osm:way:199103470,Dyker Beach Golf Course,B028,,,
+osm:way:210845349,Ciccarone Park,X102,A,2026-04-16,1.0
+osm:way:217722093,J. Hood Wright Park,MR-06,,,
+osm:way:218395372,Gorman Playground,Q085,N,2026-08-01,1.0
+osm:way:219556197,Galapo Playground,B209,A,2026-04-16,1.0
+osm:way:220354581,Athens Square,Q436,A,2026-04-03,1.0
+osm:way:222233979,Marble Hill Playground,X202,A,2026-08-11,1.0
+osm:way:222790567,Russell Pedersen Playground,B192,A,2026-08-10,1.0
+osm:way:224026097,Fred Samuel Playground,M160,A,2026-05-20,1.0
+osm:way:224028343,Langston Hughes Playground,M211B,A,2026-08-26,1.0
+osm:way:224028495,St. Nicholas Playground South,M211A,N,2026-08-26,1.0
+osm:way:224291352,Paerdegat Park,B218,A,2026-08-03,1.0
+osm:way:225143097,Martin Luther King Playground,M198,A,2026-07-22,1.0
+osm:way:225150634,P.S. 155 Playground,M239,A,2026-07-14,1.0
+osm:way:225188968,Cherry Tree Park,M215,A,2026-05-20,1.0
+osm:way:225189080,Samuel Seabury Playground,M236,A,2026-04-24,1.0
+osm:way:225189513,Poor Richard's Playground,M230,U,2026-06-24,1.0
+osm:way:225190196,Stanley Isaacs Playground,M192,A,2026-04-20,1.0
+osm:way:227086287,Park Slope Playground,B320,A,2026-05-18,1.0
+osm:way:236586871,Saint Michael's Playground,Q174A,N,2026-08-24,1.0
+osm:way:237040790,Monsignor Raul Del Valle Square,X009,,,
+osm:way:237044437,Barretto Point Park,X307,A,2026-08-31,1.0
+osm:way:237427159,Rufus King Park,Q023,N,2026-05-23,1.0
+osm:way:237845865,Triborough Bridge Playground B,Q066,,,
+osm:way:238073821,Hallets Cove Playground,Q226-01,A,2026-04-21,1.0
+osm:way:239977366,Vesuvio Playground,M069,A,2026-07-13,1.0
+osm:way:240504085,Woodtree Playground,Q332,N,2026-08-24,1.0
+osm:way:240569209,Spirit Playground,Q429,A,2026-07-06,1.0
+osm:way:241816211,East Parade Grounds,B068,,,
+osm:way:241816251,Prospect Park Tennis Center,B068,,,
+osm:way:241834959,Dimattina Playground,B223B,A,2026-04-27,1.0
+osm:way:241846597,Boathouse,B073-ZN23,N,2026-06-17,1.0
+osm:way:241846614,Wellhouse,B073-ZN20,A,2026-05-20,1.0
+osm:way:241878599,Arrochar Playground,R062,A,2026-08-25,1.0
+osm:way:244776381,Spuyten Duyvil Playground,X171,A,2026-06-17,1.0
+osm:way:245220678,Van Voorhees Playground,B050,N,2026-08-22,1.0
+osm:way:245487139,Clove Lakes Park Zone 1,R005-ZN01,,,2.0
+osm:way:246970614,Bloomingdale Playground,R106,,,
+osm:way:247141689,Wolfe's Pond Park Zone 2,R031-ZN02,,,2.0
+osm:way:247495140,Forest Park Bandshell,Q015-ZN06,N,2026-08-11,1.0
+osm:way:247497715,Victory Field,Q015-ZN04,N,2026-06-13,1.0
+osm:way:247660873,Gen. Douglas MacArthur Park,R067,A,2026-08-04,1.0
+osm:way:247742878,Castlewood Playground,Q327,A,2026-08-31,1.0
+osm:way:247840283,Cunningham Park Zone 2,Q021-ZN02,A,2026-08-21,1.0
+osm:way:247883777,Fidler-Wyckoff House Park,B376,A,2026-06-22,1.0
+osm:way:248285676,Captain Tilly Park,Q052,N,2026-08-15,1.0
+osm:way:248314469,Lieutenant John H. Martinson Playground,R090,A,2026-07-10,1.0
+osm:way:248393642,Cunningham Park Zone 3,Q021-ZN03,N,2026-07-11,1.0
+osm:way:248454534,Shore Road Field House,B082-ZN05,A,2026-05-19,1.0
+osm:way:248454540,Shore Road Park Zone 4,B082-ZN04,U,2026-05-15,1.0
+osm:way:248464182,Coney Island Beach Zone 7c,B169-ZN07C,N,2026-04-28,1.0
+osm:way:248474683,Abe Stark Skating Arena,B336,,,
+osm:way:248496356,Coney Island Beach Zone 2b,B169,,,
+osm:way:248500405,Asser Levy Park,B080,A,2026-05-28,1.0
+osm:way:248500406,Century Playground,B337,A,2026-08-06,1.0
+osm:way:248519478,210 St Playground,Q021,,,
+osm:way:248544351,Vidalia Park,X266,A,2026-06-04,1.0
+osm:way:248773597,Union Square Park,M089,A,2026-06-22,1.0
+osm:way:248851345,Horatio Park,Q001,,,
+osm:way:249029507,Hunter Island Picnic Area,X039,,,
+osm:way:249054126,Dyker Playground,B028-03,A,2026-08-31,1.0
+osm:way:249092699,Colonel David Marcus Playground,B128,A,2026-04-06,1.0
+osm:way:249574759,Slope Park Playground,B288,A,2026-06-15,1.0
+osm:way:249652392,Gravesend Park,B042,A,2026-07-06,1.0
+osm:way:249665244,Downing Street Playground,M027,N,2026-06-08,1.0
+osm:way:250187883,Betsy Head Park,B008,N,2026-08-01,1.0
+osm:way:250269716,Pier 45 Comfort Station,,,,
+osm:way:250490059,Hudson River Park Pier 51,,,,
+osm:way:250560305,Sobelsohn Park,Q015,,,
+osm:way:250655233,Meadow Lake North,Q099-ZN20,N,2026-08-29,1.0
+osm:way:252080060,Ocean Hill Playground,B144,N,2026-08-20,1.0
+osm:way:253901304,Cypress Hills Playground,B103,A,2026-06-23,1.0
+osm:way:253908679,Hattie Carthan Playground,B323,U,2026-05-18,1.0
+osm:way:254594895,Audubon Playground,M240,A,2026-08-05,1.0
+osm:way:254594896,Carmansville Playground,M018,A,2026-04-24,1.0
+osm:way:255284304,Macombs Dam Park Zone 2 Lower,X030-ZN02,U,2026-04-23,1.0
+osm:way:255971447,Ancient Playground,M010-145,,,2.0
+osm:way:259194027,Lincoln Road Playground,B073,,,
+osm:way:261699212,City Line Park,B141,N,2026-08-29,1.0
+osm:way:261701090,Doctor Martin Luther King Junior Park,B056,U,2026-05-15,1.0
+osm:way:261740878,Marconi Park,Q127,N,2026-06-09,1.0
+osm:way:261911914,Peters Field,Q351,A,2026-06-18,1.0
+osm:way:261918034,Howard Von Dohlen Playground,Q105,U,2026-08-25,1.0
+osm:way:263738711,Tiger Playground,B307,U,2026-06-08,1.0
+osm:way:264529159,Crispus Attucks Playground,B102,A,2026-07-20,1.0
+osm:way:265347586,Heckscher Playground,M010-031,,,2.0
+osm:way:265347592,Central Park West,M010-ZN08,A,2026-08-04,1.0
+osm:way:266077861,McCaffrey Playground,M161,N,2026-04-30,1.0
+osm:way:266097823,Matthews-Palmer Playground,M154,N,2026-04-16,1.0
+osm:way:269303594,Classic Playground,M071-03,A,2026-08-17,1.0
+osm:way:271460386,Morningside Playground,M056,,,
+osm:way:271628058,Marcus Garvey Park Zone 1,M058,,,
+osm:way:274986260,Wildlife Sanct. & 119 St Tennis Courts,M071,,,
+osm:way:275121180,Inwood Hill Park Zone 1,M042-ZN01,A,2026-04-07,1.0
+osm:way:275301143,Franz Sigel Park Zone 1,X047-ZN01,,,1.0
+osm:way:276021727,Martin Van Buren Playground,X010-ZN07,,,1.0
+osm:way:276021729,Crotona Tennis House & Courts,X010,,,
+osm:way:276404375,Williamsbridge Oval Recreation Center,XR-05,,,
+osm:way:276537454,Stables Area,X092,,,
+osm:way:277175057,Marie Curie Park,Q364,A,2026-06-01,1.0
+osm:way:277443856,Flushing Meadows Golf Center,Q099,,,
+osm:way:277447812,Playground for All Children,Q099_temp1,,,
+osm:way:277477831,Louis Armstrong Playground,Q415,A,2026-06-08,1.0
+osm:way:278053556,Battery Park Zone 1,M005,,,
+osm:way:278363046,Belvedere Castle,M010-ZN24&25,A,2026-06-23,1.0
+osm:way:278366170,The Great Hill,M010,,,
+osm:way:280079054,McCarren Park House,B058-ZN03,N,2026-06-13,2.0
+osm:way:280276843,Virginia Principe Playground,Q131-01,A,2026-08-10,1.0
+osm:way:280415397,Joseph Austin Playground,Q391,A,2026-08-03,1.0
+osm:way:280559340,Astoria Heights Playground,Q014,A,2026-04-21,1.0
+osm:way:280621506,Astoria Park Zone 1,Q004-ZN01,N,2026-06-27,1.0
+osm:way:280642421,Rainey Park Playground,Q048-01,A,2026-07-27,1.0
+osm:way:280642602,Vernon Playground,Q104,N,2026-08-01,2.0
+osm:way:281713082,Rosewood Playground,X004,,,
+osm:way:281875220,Virginia Playground,X148L,A,2026-08-20,1.0
+osm:way:282309687,Charybdis Playground,Q004,,,
+osm:way:282928204,Baisley Pond Park Zone 1,Q005,,,
+osm:way:282928322,Baisley Pond Park Zone 4,Q005-ZN04,A,2026-06-16,1.0
+osm:way:282928402,Baisley Pond Park Zone 3,Q005-ZN03,A,2026-06-16,1.0
+osm:way:283018330,Cambria Playground,Q339,A,2026-05-18,1.0
+osm:way:283046246,Roy Wilkins Rec Center Zone 2A,Q448-ZN02A,N,2026-07-19,1.0
+osm:way:283147309,174 St Playground,Q051,,,1.0
+osm:way:283155629,173 St Playground,QR-06,,,1.0
+osm:way:283155785,Detective Keith L Williams Park,Q121,A,2026-07-31,1.0
+osm:way:283187238,Hoover - Manton Playgrounds,Q220G,A,2026-08-03,1.0
+osm:way:283248661,Detective William T. Gunn Playground,Q358,A,2026-08-17,1.0
+osm:way:284444027,Crocheron Park Zone 1,Q012-ZN01,A,2026-04-24,1.0
+osm:way:284485883,Kissena Park Zone 2 (Tennis Courts),Q024,,,
+osm:way:284496141,Captain Mario Fajardo Park,Q300-04,N,2026-07-24,1.0
+osm:way:284539035,Leonardo Ingravallo Playground,Q086,,,1.0
+osm:way:284648235,Francis Lewis Park,Q126,A,2026-08-18,1.0
+osm:way:284825758,Playground For All Children,X039-01,U,2026-04-29,1.0
+osm:way:284833950,Allerton Fields In Bronx Park,X002,,,
+osm:way:284856387,South Of Fountain Of The Planets,Q099-ZN08,A,2026-03-19,1.0
+osm:way:284860787,Ballfields,Q099,,,
+osm:way:284868525,Carl Schurz Promenade,M081,,,
+osm:way:285245153,Angelo Campanaro Park,X187-01,A,2026-04-13,1.0
+osm:way:285312665,Bayside Playground,Q389,A,2026-07-13,1.0
+osm:way:285327808,Hammel Playground,Q367,A,2026-05-04,1.0
+osm:way:285973713,"Julius Richman ""Echo"" Park",X017,U,2026-07-06,1.0
+osm:way:289558290,"Phil ""Scooter"" Rizzuto Park",Q129,A,2026-07-23,1.0
+osm:way:292668930,Rolph Henry Playground,B148,A,2026-05-18,1.0
+osm:way:294248630,Aqueduct Walk (West 181st to West 183rd),X001A,,,
+osm:way:295636175,Elmhurst Park,Q492,A,2026-06-08,1.0
+osm:way:296322543,Nicholas Naquan Heyward Jr. Park,B230,A,2026-07-08,1.0
+osm:way:298767142,Real Good Park,Q357B,N,2026-04-29,1.0
+osm:way:298787293,Horace Harding Playground,Q428,U,2026-08-20,1.0
+osm:way:298794357,Playground Sixty-Two,Q377,N,2026-06-08,1.0
+osm:way:299513781,Corona Golf Playground,Q450,A,2026-08-07,1.0
+osm:way:299674959,(Scylla Playground) Children's Play Area,M107,,,
+osm:way:302961318,Edward Hart Playground,Q067A,A,2026-07-06,1.0
+osm:way:305085969,St. James Park,X044,A,2026-08-28,1.0
+osm:way:305086297,Poe Park,X040,N,2026-05-20,1.0
+osm:way:306815793,Irving Square Park,B049,A,2026-04-30,1.0
+osm:way:307027678,Hester St. Playground,M105,N,2026-07-18,2.0
+osm:way:309161246,Northern Playground,Q363,A,2026-08-24,1.0
+osm:way:315410364,Jackie Robinson Park,B294,A,2026-07-10,1.0
+osm:way:315410561,Eleanor Roosevelt Playground,B359,A,2026-07-10,1.0
+osm:way:322138951,Washington Hall Park,B220,A,2026-07-13,1.0
+osm:way:325008929,Alfred E. Smith Playground,M194,U,2026-08-10,1.0
+osm:way:328849068,Rose Hill Park,X042,A,2026-08-24,1.0
+osm:way:330605789,Ben Abrams Playground,X002-ZN01,,,2.0
+osm:way:332939454,Colucci Playground,X122,A,2026-03-24,1.0
+osm:way:334252017,Commodore John Barry Park Children's Play Area,B021,N,2026-08-15,1.0
+osm:way:334342658,Greene Playground,B301,A,2026-06-08,1.0
+osm:way:338078742,Haggerty Park,Q359,A,2026-06-09,1.0
+osm:way:338078871,Daniel M O'Connell Playground,Q106,A,2026-08-03,1.0
+osm:way:360408851,Bushwick Inlet Park Playground,B529-ZN01,U,2026-07-14,1.0
+osm:way:361611157,Frank D O'Connor Playground,Q098,A,2026-06-22,1.0
+osm:way:361611928,Moore Homestead Playground,Q361,U,2026-04-21,1.0
+osm:way:362126672,Greenwood Playground,B130,A,2026-06-15,1.0
+osm:way:362824890,(Evelyn's Playground) Children's Play Area,M089,A,2026-06-22,1.0
+osm:way:364561423,Playground Ninety,Q362,U,2026-05-18,1.0
+osm:way:365936358,La Guardia Playground,B167,A,2026-06-15,1.0
+osm:way:365936797,Strawberry Playground,B223,,,
+osm:way:365937391,Star Spangled Banner Playground,B266,A,2026-08-05,1.0
+osm:way:367688676,Helen Marshall Playground,Q373,U,2026-05-18,1.0
+osm:way:369699550,Park of the Americas,Q026,N,2026-08-01,1.0
+osm:way:372050312,American Playground,B001,U,2026-04-28,1.0
+osm:way:372721441,Teardrop Park,,,,
+osm:way:374128175,Big Bush Park,Q205A,A,2026-08-07,1.0
+osm:way:377078403,Potomac Playground,B262,A,2026-07-13,1.0
+osm:way:377541142,Cunningham Park Playground,Q021-ZN01,,,2.0
+osm:way:379542657,Frontera Park,Q360M,A,2026-05-04,1.0
+osm:way:379587713,Crowley Playground,Q360J,A,2026-08-24,1.0
+osm:way:380573983,World's Fair Playground,Q084A,,,
+osm:way:380630651,Mauro Playground,Q099-20,A,2026-07-31,1.0
+osm:way:380781881,Silent Springs Playground,Q300,,,
+osm:way:381052502,Ella Fitzgerald Playground,Q300A,,,
+osm:way:382191585,Pierrepont Playground,B222,A,2026-07-20,1.0
+osm:way:382243438,Josephine Caminiti Playground,Q046,N,2026-07-14,1.0
+osm:way:382252582,Newtown Playground,Q041,N,2026-04-21,1.0
+osm:way:382664539,Judge Moses Weinstein Playground,Q336,A,2026-08-17,1.0
+osm:way:382668146,Queens Valley Playground,Q212,A,2026-05-19,1.0
+osm:way:382669634,Vleigh Playground,Q320,A,2026-08-31,1.0
+osm:way:382724712,Holy Cow Playground,Q300A1,A,2026-08-17,1.0
+osm:way:383641603,Triassic Playground,Q099-15,A,2026-07-09,1.0
+osm:way:387351387,Robert Bendheim Playground,M010,,,
+osm:way:387351390,Conservatory Garden,M010,,,
+osm:way:388746732,MacNeil Playground,Q009,,,
+osm:way:389547537,136th St Playground,Q445-01,A,2026-06-22,1.0
+osm:way:389586605,Poppenhusen Playground,Q011,A,2026-05-18,1.0
+osm:way:390086292,Randall Playground,X203,A,2026-08-20,1.0
+osm:way:394982859,Brady Playground,X002-05,A,2026-06-03,1.0
+osm:way:397491603,Police Officer Nicholas Demutiis Playground,Q118,A,2026-07-23,1.0
+osm:way:401272976,Ditmars Park,Q385,A,2026-07-06,1.0
+osm:way:404246337,Farm Playground,Q221,A,2026-06-15,1.0
+osm:way:405891530,Steeplechase Park,B369,,,
+osm:way:414018267,Bella Abzug Park,M399,A,2026-06-02,1.0
+osm:way:415432911,The Painter's Playground,Q306,A,2026-06-15,1.0
+osm:way:419968836,Van Cortlandt Pool,X092,,,
+osm:way:421695239,Bush Terminal Park,BT15,A,2026-05-29,1.0
+osm:way:423245502,Vinmont Veteran Park,X152,A,2026-08-25,1.0
+osm:way:423895070,Haffen Park,X196,,,1.0
+osm:way:425616455,Maple Playground,Q211,A,2026-04-13,1.0
+osm:way:425616456,Bowne Playground,Q308,A,2026-04-13,1.0
+osm:way:428923844,Jackie Robinson Playground,B357,A,2026-08-25,1.0
+osm:way:445782512,South Rochdale Playground,Q427,N,2026-08-25,1.0
+osm:way:445782513,North Rochdale Playground,Q426,U,2026-08-25,1.0
+osm:way:445782514,Rochdale Park,QR-07,,,1.0
+osm:way:445818969,Doctor Charles R Drew Memorial Park,Q220C-03,,,1.0
+osm:way:445818971,Frederick B. Judge Playground,Q119,A,2026-07-23,1.0
+osm:way:446377954,Montbellier Park,Q396,U,2026-07-21,1.0
+osm:way:447686268,East Springfield Playground,Q404,A,2026-07-17,1.0
+osm:way:468503683,Laurelton Parkway West Playground,Q027,,,
+osm:way:468529499,Bay Terrace Playground,Q399,A,2026-06-08,1.0
+osm:way:469284212,Carver Playground,B347,U,2026-07-10,1.0
+osm:way:474102836,Grady Playground Children's Play Area,B275,N,2026-05-04,1.0
+osm:way:474168168,Anne Loftus Playground,M029,,,
+osm:way:474199302,Monsignor Kett Playground,M199,A,2026-08-13,2.0
+osm:way:478719918,DiGilio Playground,B316,A,2026-04-16,1.0
+osm:way:483702983,Augustus Saint-Gaudens Playground,M226,N,2026-06-01,1.0
+osm:way:484550933,Willow Lake Playground,Q348,A,2026-07-20,1.0
+osm:way:484550937,Yellowstone Municipal Park,Q425-01,,,
+osm:way:484552778,Annadale Playground,Q319,U,2026-06-08,1.0
+osm:way:485891857,Evergreen Park,Q302,A,2026-06-22,1.0
+osm:way:486637640,Russell Sage Playground,Q335,A,2026-06-15,1.0
+osm:way:502449360,Robert E Venable Park,B380,A,2026-06-23,1.0
+osm:way:517469266,Harmony Playground,B073,,,
+osm:way:529831128,Electric Playground,Q342,U,2026-07-13,1.0
+osm:way:531580782,Robert Moses Playground,M158,U,2026-06-12,1.0
+osm:way:538396185,Herbert Von King Park Playground Children's Play Area,B088,A,2026-05-29,1.0
+osm:way:544159444,(Neufeld Playground) Children's Play Area,M071-04,A,2026-06-03,1.0
+osm:way:550177716,Tall Oak Playground,Q317,A,2026-08-31,1.0
+osm:way:551738691,Louis Pasteur Park,Q369,A,2026-08-14,1.0
+osm:way:553286421,Sternberg Park,B055,N,2026-07-24,1.0
+osm:way:553578136,Ehrenreich-Austin Playground,Q304,A,2026-08-10,1.0
+osm:way:553583855,Maurice A Fitzgerald Playground,Q337,A,2026-08-27,1.0
+osm:way:554059831,Emerald Playground,Q344,A,2026-04-06,1.0
+osm:way:556607150,Pomonok Playground,Q329,A,2026-07-23,1.0
+osm:way:556805908,Rosemary's Playground,Q398,A,2026-04-20,1.0
+osm:way:557785320,Bath Beach Park,B164,U,2026-06-22,1.0
+osm:way:559496075,Newport Playground,B339,U,2026-07-16,1.0
+osm:way:559531350,John Allen Payne Playground,B210A,A,2026-08-20,1.0
+osm:way:559541043,Milennium Playground,B052,,,2.0
+osm:way:562767690,Bill Rainey Park,X255,A,2026-04-23,1.0
+osm:way:562918440,London Planetree Playground,Q128,A,2026-08-06,1.0
+osm:way:564141929,Beach 9th Street Playground,Q162J01,A,2026-05-12,1.0
+osm:way:568376941,Beach 59th Street Playground,Q162E,A,2026-05-11,1.0
+osm:way:568796367,Bellaire Playground,Q322,A,2026-07-10,1.0
+osm:way:582706051,Sankofa Park,B261,N,2026-04-01,1.0
+osm:way:582732638,William Sheridan Playground,B124,A,2026-07-14,1.0
+osm:way:597899047,Harold Schneiderman Playground,Q408,A,2026-07-01,1.0
+osm:way:601390613,Harry Maze Playground,B285,A,2026-03-31,1.0
+osm:way:605958242,Redfern Playground,Q345,A,2026-04-21,1.0
+osm:way:607163908,1 Hotel Brooklyn Bridge,,,,
+osm:way:608663280,Domino Park,,,,
+osm:way:614586241,Playground Seventy-Five,Q354,A,2026-07-23,1.0
+osm:way:614597592,Delphin H. Greene Playground,Q307,A,2026-05-29,1.0
+osm:way:625093345,Edmonds Playground,B321,A,2026-06-15,1.0
+osm:way:642316885,Admiral Park,Q338,A,2026-04-27,1.0
+osm:way:642720326,Ten Eyck Playground,B311,N,2026-05-19,1.0
+osm:way:667599606,Police Officer Hilario Serrano Playground,X151,A,2026-04-20,1.0
+osm:way:668342659,Nautilus Playground Children's Play Area,B268,U,2026-05-04,1.0
+osm:way:672683268,Yak Playground,B308,A,2026-04-10,1.0
+osm:way:675913176,(Little Flower Playground) Children's Play Area,M132,A,2026-08-26,1.0
+osm:way:676051615,Flynn Brothers Playground,X146,A,2026-05-11,1.0
+osm:way:686979162,Waring Playground,X002,,,
+osm:way:704420958,Little Bay Park Zone 2,Q010A,,,
+osm:way:720392297,Sgt. William Dougherty Playground,B096,U,2026-05-19,1.0
+osm:way:722371256,Lincoln Terrace Park / Arthur S. Somers Playground,B054-01,A,2026-04-22,1.0
+osm:way:728248369,Watson Gleason Playground,X124,A,2026-04-13,1.0
+osm:way:732391440,Marc and Jason's Playground,B284,A,2026-07-27,1.0
+osm:way:740083744,Hudson Beach,M071,,,
+osm:way:741775617,Bayside Fields,Q387A,A,2026-08-03,1.0
+osm:way:741776804,Clintonville Playground,Q390,A,2026-07-15,1.0
+osm:way:741783189,Saul Weprin Playground,Q293,A,2026-08-31,1.0
+osm:way:741784455,Auburndale Playground,Q397,A,2026-06-22,1.0
+osm:way:745537380,Martinez Playground,B127,N,2026-07-23,1.0
+osm:way:749291329,Highland Park Zone 1,Q020,,,
+osm:way:769716504,Sol Lain Playground,M235,A,2026-04-01,1.0
+osm:way:769747296,Breukelen Playground Children's Play Area,B247,,,1.0
+osm:way:770410277,Challenge Playground,Q346,A,2026-05-21,1.0
+osm:way:776513589,Captain Mario Fajardo Park,Q300-ZN03,A,2026-07-31,1.0
+osm:way:783063086,Mott Playground,X115,A,2026-07-13,1.0
+osm:way:808972135,Rachel Haber Cohen Playground,B150,A,2026-08-06,1.0
+osm:way:809839893,Frederick Douglass Playground,M220,A,2026-08-03,1.0
+osm:way:812393706,Luna Playground,B296,N,2026-05-13,1.0
+osm:way:827042113,Jackson Pond Playground,Q015-03,A,2026-06-18,1.0
+osm:way:832562399,Brookville Park Playground,Q008,,,
+osm:way:833335529,Little Island,,,,
+osm:way:836889897,Margaret I. Carman Green - Weeping Beech,Q022,U,2026-07-24,1.0
+osm:way:837696042,Pier 97,,,,
+osm:way:851916922,Winthrop Playground,B267,A,2026-08-03,1.0
+osm:way:853810039,Reiff Playground,Q423,A,2026-08-10,1.0
+osm:way:873203204,Commander Eugene S Sarsfield Playground,B207,A,2026-06-12,1.0
+osm:way:879798372,Horseshoe Park,X014,N,2026-05-18,1.0
+osm:way:879798377,Basil Behagen Playground,X166,A,2026-07-16,1.0
+osm:way:879798383,Yolanda García Park,X353,A,2026-04-07,1.0
+osm:way:880274609,Arcilla Playground,X219,A,2026-08-04,1.0
+osm:way:881121558,Sunset Park Playground Children’s Play Area,B087,,,1.0
+osm:way:885206196,River Park,X002-07,A,2026-04-06,1.0
+osm:way:890862704,Coleman Playground,M019,N,2026-04-01,1.0
+osm:way:891392395,People's Park,X103,U,2026-08-24,1.0
+osm:way:897960167,Webster Memorial Playground,X174,A,2026-04-24,1.0
+osm:way:897960169,Slattery Playground,X085,A,2026-04-22,1.0
+osm:way:904432977,Mazzei Playground,X157,A,2026-08-21,1.0
+osm:way:904714816,Happy Warrior Playground,M229,N,2026-06-02,1.0
+osm:way:920669738,Chester Playground,B362,U,2026-07-16,1.0
+osm:way:923127309,Belmont Playground,X108,A,2026-08-27,1.0
+osm:way:923138151,Gouverneur Morris Playground,X222,A,2026-07-16,1.0
+osm:way:923400022,Railroad Park,X032,,,
+osm:way:923400026,Keltch Memorial Park,X058,,,
+osm:way:925546282,Bushwick Playground,B017,A,2026-04-01,1.0
+osm:way:926805953,Noble Playground,X123,A,2026-08-10,1.0
+osm:way:926926227,Lyons Square Playground,X029,A,2026-04-29,1.0
+osm:way:926926229,Fox Park,X247,A,2026-08-31,1.0
+osm:way:926926230,Al Quiñones Playground,X179,A,2026-07-28,1.0
+osm:way:927170504,Grove Hill Playground,X235,A,2026-04-27,1.0
+osm:way:927170517,Carlos J Lozada Playground,X131,A,2026-08-10,1.0
+osm:way:927203001,Hilton White Playground,X112,A,2026-06-01,1.0
+osm:way:927203013,Drew Playground,X021,A,2026-04-20,1.0
+osm:way:929734493,Hamilton-Metz Field,B193,A,2026-06-03,1.0
+osm:way:935882222,Sachkerah Woods Playground,X092,,,
+osm:way:953259181,Mellett Playground,B197,N,2026-06-22,1.0
+osm:way:972099364,Bayside Marina,,,,
+osm:way:977584679,Adventure Playground,M037-10,N,2026-07-01,1.0
+osm:way:986060766,Stars And Stripes Playground,X193,A,2026-08-10,1.0
+osm:way:986656768,Burns Playground,X232,A,2026-03-02,1.0
+osm:way:988135619,Friends Field,B372,A,2026-08-21,1.0
+osm:way:988862973,Wayanda Park,Q082,U,2026-06-04,1.0
+osm:way:988862975,Hollis Playground,Q405,A,2026-08-03,1.0
+osm:way:991986578,Breininger Park,Q134,A,2026-08-17,1.0
+osm:way:997819343,(Twenty-Four Sycamores Park Playground) Children's Play Area,M108Q,N,2026-04-20,1.0
+osm:way:1005172029,"(Arlington ""Ollie"" Edinboro Playground) Children's Play Area",M077,,,
+osm:way:1008864660,Gun Hill Playground,X161,A,2026-06-11,1.0
+osm:way:1009324606,Eastchester Playground,X156,A,2026-07-22,1.0
+osm:way:1016792164,Wolfe's Pond Park Zone 2,R031-ZN02,,,2.0
+osm:way:1017935481,Albemarle Playground,B297,A,2026-08-20,1.0
+osm:way:1017955120,PFC Norton Playground,B208,A,2026-07-13,1.0
+osm:way:1018144893,Rappaport Playground,B152,A,2026-08-20,1.0
+osm:way:1041134493,Bellerose Playground,Q328,A,2026-07-10,1.0
+osm:way:1042745413,Sperandeo Brothers Playground,B163,U,2026-06-05,1.0
+osm:way:1044613965,Fermi Playground,B334,A,2026-07-10,1.0
+osm:way:1058031267,Lanett Playground,Q407,U,2026-03-26,1.0
+osm:way:1058415212,Westbourne Playground,Q266,A,2026-05-04,1.0
+osm:way:1064451701,One Hundred Percent Playground,B342,A,2026-04-30,1.0
+osm:way:1064452754,Ethan Allen Playground,B345,N,2026-04-13,1.0
+osm:way:1069379857,Heckscher Playground,B139,U,2026-04-30,1.0
+osm:way:1079527157,Houston Street Playground,M105,N,2026-07-18,2.0
+osm:way:1080391679,Captain William Harry Thompson Playground,X159,A,2026-08-20,2.0
+osm:way:1082441647,Lawrence Playground,Q099,,,
+osm:way:1086756141,Willoughby Playground,B348,A,2026-05-04,1.0
+osm:way:1086756142,Stockton Playground,B298,U,2026-03-16,1.0
+osm:way:1086815050,Greencroft Playground,R089,A,2026-07-20,1.0
+osm:way:1090875194,E.M.T. Christopher J Prescott Playground,R085,A,2026-07-10,1.0
+osm:way:1095614041,Clark Playground,X200,A,2026-04-21,1.0
+osm:way:1095614044,Saw Mill Playground,X238,A,2026-06-15,1.0
+osm:way:1101344827,Marion-Hopkinson Playground,B110,A,2026-07-16,1.0
+osm:way:1101348793,Stephen A Rudd Playground,B131,N,2026-04-20,1.0
+osm:way:1104542904,Jesse Owens Playground Children's Play Area,B269,U,2026-08-31,1.0
+osm:way:1105528044,Cedar Playground,X111,A,2026-08-10,1.0
+osm:way:1107165183,Anibal Aviles Playground,M200A,A,2026-08-03,1.0
+osm:way:1109172971,Seton Park,X201,,,1.0
+osm:way:1110942463,(River Run Playground) Children's Play Area,M071-08,A,2026-08-17,1.0
+osm:way:1118151306,Owl Hollow Fields,R017-ZN01,N,2026-08-30,1.0
+osm:way:1121582607,Herald Square,M036,,,
+osm:way:1121932385,Greeley Square Park,M032,,,1.0
+osm:way:1126345067,Peña Herrera Playground,B210J,U,2026-07-30,1.0
+osm:way:1133961150,Bildersee Playground,B335,U,2026-04-07,1.0
+osm:way:1134073087,Baisley Park South,Q005-11,A,2026-07-31,1.0
+osm:way:1134077778,157th St Playground,Q005,,,
+osm:way:1138178416,Bedford Playground,B142,N,2026-04-16,1.0
+osm:way:1147407835,Ampere Playground,Q378,A,2026-04-27,1.0
+osm:way:1154643860,Telephone Playground,Q349,A,2026-08-31,1.0
+osm:way:1167134117,Kennedy-King Playground,B304,U,2026-06-05,1.0
+osm:way:1168580922,Loreto Playground,X163,A,2026-07-27,1.0
+osm:way:1175238670,Riegelmann Boardwalk Restroom,B169,,,
+osm:way:1175792029,Lt. Michael R. Davidson Playground,Q516,,,
+osm:way:1183958467,MacArthur Playground,M256,A,2026-07-27,1.0
+osm:way:1192473763,Bushwick Playground,B310,U,2026-06-04,1.0
+osm:way:1200038951,Havemeyer Playground,X148M1,A,2026-08-14,1.0
+osm:way:1213862026,Gansevoort Peninsula Dog Park,,,,
+osm:way:1216363578,Fresh Meadows Playground,Q314,A,2026-08-31,1.0
+osm:way:1222016501,Quisqueya Playground,M037,,,
+osm:way:1223837947,Bartlett Playground,B286,A,2026-03-09,1.0
+osm:way:1231110161,Story Playground,X204,A,2026-08-20,1.0
+osm:way:1253118354,Hippo Playground,M071-ZN08,,,1.0
+osm:way:1253119948,(Dinosaur Playground) Children's Play Area,M071-ZN13,,,1.0
+osm:way:1254311180,Fort Washington Park Zone 2A,M028-ZN02,,,1.0
+osm:way:1256929303,Squibb Park,B223,,,
+osm:way:1257884491,Bufano Playground,X121,U,2026-05-15,1.0
+osm:way:1263305548,Vito Locascio Field,Q095,U,2026-08-21,1.0
+osm:way:1266345085,Pink Playground,B309,U,2026-06-05,1.0
+osm:way:1275687558,Starlight Park Zone 1,X147A,,,
+osm:way:1279201474,Bloomingdale Playground,M238,A,2026-07-06,1.0
+osm:way:1283910034,Sheltering Arms Playground,M190,U,2026-04-24,1.0
+osm:way:1284582008,(St. Catherine's Park Playground) Children's Play Area,M079,A,2026-08-06,1.0
+osm:way:1287150200,(Riverbank Playground) Children's Play Area,M072-01,A,2026-08-07,1.0
+osm:way:1295635921,Lily Brown Playground,M028-02,A,2026-07-27,1.0
+osm:way:1324432345,Reverend Polite Playground,X116,A,2026-08-31,1.0
+osm:way:1334565918,Surf Playground,B315,U,2026-04-28,1.0
+osm:way:1339757519,Evelina Antonetty Playground,X106,A,2026-06-15,1.0
+osm:way:1343716410,Nautilus Playground,Q448-01,A,2026-08-25,1.0
+osm:way:1385379081,Willis Playground,X217,U,2026-05-11,1.0
+osm:way:1385383306,Millbrook Playground,X182,A,2026-07-17,1.0
+osm:way:1387896540,Gertrude Ederle Recreation Center,M063,U,2026-08-03,1.0
+osm:way:1408410016,Matthews-Muliner Playground,X178,A,2026-04-01,1.0
+osm:way:1417004200,Riverbend Playground,X175,A,2026-07-20,1.0
+osm:way:1423326045,Castle Hill Playground,X177,A,2026-06-04,1.0
+osm:way:1428306777,Dongan Playground,R087,A,2026-07-20,1.0
+osm:way:1429112408,Springfield Park North,Q406,A,2026-08-17,1.0
+osm:way:1446091600,P.O. Reinaldo Salgado Playground Children’s Play Area,B224,A,2026-08-24,1.0
+osm:way:1446989956,(St. Nicholas Park Playground) Children's Play Area,M077-02,A,2026-04-29,1.0
+osm:way:1446991535,(St. Nicholas Park Playground) Children's Play Area,M077-04,A,2026-07-27,1.0
+osm:way:1446995067,Catbird Playground (Children's Play Area),M081-02,A,2026-08-06,1.0
+osm:way:1448065759,Tilden Playground Children's Play Area,B234,A,2026-07-20,1.0
+osm:way:1448068589,Herman Dolgon Playground Children's Play Area,B235,U,2026-08-06,1.0
+osm:way:1450096473,Golconda Playground Children's Play Area,B243,N,2026-08-20,1.0
+osm:way:1450098368,McDonald Playground Children's Play Area,B244,A,2026-08-24,1.0
+osm:way:1450100339,St. John's Park Children's Area,B245,N,2026-08-01,1.0
+osm:way:1450101427,Playground 152 CLII,M014,,,2.0
+osm:way:1450896608,Fox Playground Children's Play Area,B248,N,2026-06-12,1.0
+osm:way:1450901352,Nostrand Playground Children's Play Area,B250,N,2026-08-29,1.0
+osm:way:1450902253,Pat Parlato Playground Children's Play Area,B251,,,
+osm:way:1450910325,Wingate Park Children's Play Area,B254,N,2026-08-29,1.0
+osm:way:1450920290,Brevoort Playground Children's Play Area,B258,A,2026-05-18,1.0
+osm:way:1450932925,Roebling Playground Children's Play Area,B264,A,2026-07-23,1.0
+osm:way:1450940596,Railroad Playground Children's Play Area,B271,A,2026-05-01,1.0
+osm:way:1450941674,Marlboro Playground Children's Play Area,B272,N,2026-06-05,1.0
+osm:way:1450942437,Bayview Playground Children's Play Area,B274,A,2026-06-08,1.0
+osm:way:1452051843,Woods Playground,B364,A,2026-08-31,1.0
+osm:way:1479481354,Osborn Playground,B343,N,2026-08-03,1.0
+osm:way:1498878042,Morningside Cafe,M056-ZN01,N,2026-08-08,1.0
+osm:way:1505408600,Pier 42,M369,N,2026-08-30,1.0
+osm:way:1507941363,Ten Mile River Playground,M140-01,A,2026-07-08,1.0
+osm:way:1521093253,Jerome Playground,B246,N,2025-11-18,1.0
+osm:way:1539046565,Seaside Playground,Q422,A,2026-05-04,1.0
+osm:way:1539347683,Locust Manor Playground,Q330,A,2026-04-20,1.0
+osm:way:1539568479,Playground 80,Q318,A,2026-07-17,1.0
+osm:way:1539854792,Equity Park,Q053,N,2026-06-08,1.0
+osm:way:1546736822,Tiffany Playground,X190,A,2026-07-28,1.0
+osm:way:1546771738,Taylor Playground,X176,A,2026-05-19,1.0
+osm:way:1546825261,Space-Time Playground,X221,A,2026-04-20,1.0
+osm:way:1546975664,Allerton Playground,X172,A,2026-07-22,1.0
+osm:way:1547001291,Edenwald Playground,X165,A,2026-06-11,1.0
+osm:way:1547019246,Magenta Playground,X214,A,2026-08-10,1.0
+osm:way:1547025164,Rienzi Playground,X141,A,2026-07-13,1.0
+osm:way:1547037437,Wakefield Playground,X188,A,2026-05-15,1.0
+osm:way:1547910141,Sumner Playground,B263,A,2026-06-08,1.0
+osm:way:1547920324,Banneker Playground,B140,A,2026-05-11,1.0
+osm:way:1548008531,Albert J. Parham Playground,B253,A,2026-08-03,1.0
+osm:way:1548368108,El-Shabazz Playground,B313,A,2026-06-18,1.0
+osm:way:1548616167,Doctor Richard Greene Playground,B228,A,2026-06-23,1.0
+osm:way:1550934228,Matthew P. Sapolin Playground,M233,A,2026-05-20,1.0
+osm:way:1564597412,Rockaway Beach 08a,Q050,,,
+nyc:7,227th Street Playground,X004,,,
+nyc:8,Olinville Playground,X004,,,
+nyc:9,Parque De Los Ninos,X004-03,A,2026-03-23,1.0
+nyc:11,Claremont Zone 3,X008-01,,,1.0
+nyc:13,Playground Of The Stars,X010-ZN08,,,1.0
+nyc:14,Bathgate Playground,X010,,,
+nyc:15,175th Street Playground,X010A-02,A,2026-07-17,1.0
+nyc:16,Crotona Park Lake,X010-ZN01,A,2026-08-19,1.0
+nyc:21,Fort Independence Playground,X020,U,2026-04-14,1.0
+nyc:24,Macombs Dam Park Zone 1 Upper,X030-01,,,1.0
+nyc:26,Foster Park Zone 1,X034-ZN01,A,2026-04-14,1.0
+nyc:36,St Mary's Playground East,X045-01,N,2026-06-01,1.0
+nyc:37,St Mary's Playground West,X045,,,
+nyc:39,Henry Hudson Park,X080,A,2026-07-07,1.0
+nyc:42,Woodlawn Playground,X092,,,
+nyc:47,Indian Memorial To Indian Field,X092-ZN11,A,2026-08-25,1.0
+nyc:48,Allen Shandler Rec Area,X092-ZN12,N,2026-06-28,1.0
+nyc:66,Ferry Point Park Zone 4,X126,,,
+nyc:68,Harris Playground,X136-01,A,2026-07-20,1.0
+nyc:84,Nelson Playground,X168,U,2026-06-11,1.0
+nyc:86,The Pearly Gates,X170,A,2026-06-11,1.0
+nyc:118,Quarry Ballfields,X263,N,2026-04-16,1.0
+nyc:121,Mill Pond Park,X344,A,2026-05-13,1.0
+nyc:126,Imagination Playground at Betsy Head,B008,N,2026-08-01,1.0
+nyc:129,Bowne Playground,Q006_temp,,,
+nyc:130,Canarsie Park Zone 1,B018-ZN01,A,2026-08-14,1.0
+nyc:131,Canarsie Park Zone 5,B018,,,1.0
+nyc:136,Dyker Beach Park Zone 1,B028-ZN01,N,2026-07-12,1.0
+nyc:138,Fort Greene Park Zone 3,B032,,,
+nyc:167,Shore Road Park Zone 2,B082,,,
+nyc:182,Calvert Vaux Park Playground,B125,,,
+nyc:200,McGuire Fields,B166D,A,2026-07-21,1.0
+nyc:202,Coney Island Beach Zone 2a,B169,,,
+nyc:207,Coney Island Beach Zone 6b,,,,
+nyc:208,Coney Island Beach Zone 7a,B169-ZN07A,N,2026-04-15,1.0
+nyc:219,Linden Park,B214-01,N,2026-08-29,1.0
+nyc:270,P.S. 279 Playground,B305,N,2026-07-20,1.0
+nyc:296,Spring Creek Park Zone 1,B371-ZN01,N,2018-02-22,1.0
+nyc:302,Berriman Playground,B541,U,2026-08-06,1.0
+nyc:305,Battery Park Zone 2,M005,,,
+nyc:339,Fort Tryon Park Zone 1,M029,,,
+nyc:343,John Jay Park,M045,A,2026-08-13,1.0
+nyc:362,Grand Central Parkway Gas,Q084A,,,
+nyc:373,Grand Central Parkway Gas,Q084A,,,
+nyc:382,East River Park Zone 5,M144,,,
+nyc:383,East River Park Zone 6,M144,,,
+nyc:388,Baruch Playground,M165,U,2026-04-16,1.0
+nyc:408,Damrosch Park,M231,N,2026-05-01,1.0
+nyc:419,East River Playground,M258,A,2026-05-13,1.0
+nyc:427,The High Line Zone 2,M360,,,
+nyc:433,Alley Athletic Playground,Q001-ZN01,,,1.0
+nyc:444,Bayswater Playground,Q007-01,N,2026-05-11,1.0
+nyc:459,Lower Highland Playground,Q020-ZN04,,,1.0
+nyc:461,Highland Park Zone 2,Q020-ZN02,N,2026-08-29,1.0
+nyc:462,Midland Playground,R046-06,A,2026-08-31,1.0
+nyc:499,Springfield Park,Q107,N,2026-08-24,1.0
+nyc:510,Beach 30th Street Playground,Q162H,A,2026-03-26,1.0
+nyc:511,Beach 17 Playground,Q162J,A,2026-06-23,1.0
+nyc:535,Mafera Park,Q305,N,2026-05-04,1.0
+nyc:563,Alley Park,Q356,A,2026-07-14,1.0
+nyc:605,Arverne East Nature Preserve,Q520,A,2026-04-17,2.0
+nyc:606,Playground,X150J-01,A,2026-08-11,1.0
+nyc:609,Cedar Grove Beach Zone 2,R016,,,
+nyc:610,Silver Lake Park Playground,R022,,,
+nyc:619,Midland Field,R038A,N,2026-05-11,1.0
+nyc:624,South Beach Zone 3,R046,,,
+nyc:625,Midland Beach Zone 4,R046-ZN04,,,1.0
+nyc:628,Old Town Playground,R063,A,2026-07-24,1.0
+nyc:630,Willowbrook Park Recreational Area,R030,,,
+nyc:634,Markham Playground,R076,A,2026-06-04,1.0
+nyc:643,Crotona Malls Zone 1,X011,,,
+nyc:645,Mosholu Parkway Zone 4,X033-ZN04,,,
+nyc:649,Kelly Park Playground,B051,A,2026-08-24,1.0
+nyc:662,Allen Street Malls,M004,N,2016-03-30,1.0
+nyc:665,Inwood Hill Park Zone 2,M042,,,
+nyc:668,The High Line Zone 1,M360-ZN01,,,2.0
+nyc:672,East River Park Zone 2,M144-ZN02,N,2021-09-10,1.0
+nyc:692,Rockaway Community Playground,Q371-01,N,2026-07-20,1.0
+nyc:696,Fort Totten Park Zone 1,Q458-ZN01,N,2026-08-13,1.0
+nyc:700,High Rock Park,R065-ZN03A,N,2026-04-28,1.0
+nyc:704,Ferry Terminal,,,,
+nyc:710,Moynihan Connector,,,,
+nyc:713,"Hudson River Park Pier 40 - Courtyard Tunnel, Second Floor",,,,
+nyc:720,Hudson River Park Pier 83,,,,
+nyc:723,Hunters Point South,Q471-ZN02,,,
+nyc:726,Nellie Bly Amusement Park,,,,
+nyc:727,Schmidts Lane Recreation Fac.,R075D,,,
+nyc:729,Alley Pond Park Driving Range,Q001,,,
+nyc:730,Turtle Cove Driving Range,X039,,,
+nyc:732,Marine Park Golf Course,B057,,,
+nyc:733,Clearview Golf Course,Q010,,,
+nyc:734,Forest Park Golf Course,Q015-G01,,,1.0
+nyc:738,La Tourette Golf Course,R013,,,
+nyc:739,Silver Lake Golf Course,R022,,,
+nyc:741,Pelham Bay/ Split Rock Golf,X039,,,
+nyc:742,Van Cortlandt Golf Course,X092,,,
+nyc:743,Mosholu Golf Course,X092-G02,,,
+nyc:744,Ferry Point Golf Course,X126,,,
+nyc:745,Shore Parkway Gas Station,B057,,,
+nyc:746,Cunningham Gas Station,Q084,,,
+nyc:749,Hutchinson River Parkway Gas,X101,,,
+nyc:750,Major Deegan No. Gas Station,X092,,,
+nyc:751,Major Deegan So. Gas Station,X092,,,
+nyc:754,Central Park Ice Rinks,M010,,,
+nyc:755,Flushing Meadows Ice Rink,Q099,,,
+nyc:756,Clove Lakes Rink,R005,,,
+nyc:757,Mccarren Park Indoor Tennis,B058-ZN04,,,
+nyc:759,Bensonhurst Indoor Tennis,B007,N,2026-08-08,1.0
+nyc:760,Queensboro Oval Indoor Tennis,M070,,,1.0
+nyc:761,Alley Pond Indoor Tennis,Q001-ZN01,,,1.0
+nyc:762,Cunningham Park Indoor Tennis,Q021-ZN02,A,2026-08-21,1.0
+nyc:763,Crotona Park Indoor Tennis,X010,,,
+nyc:764,Mill Pond Indoor Tennis,X344,A,2026-05-13,1.0
+nyc:765,Mill Basin Marina,B166D,A,2026-07-21,1.0
+nyc:766,Paerdegat Basin Marina 1,B406,,,
+nyc:767,Paerdegat Basin Marina 2,B406,,,
+nyc:768,Paerdegat Basin Marina 3,B406,,,
+nyc:769,Paerdegat Basin Marina 4,B406,,,
+nyc:770,Paerdegat Basin Marina 5,B406,,,
+nyc:773,Lemon Creek Park Marina,R079,,,
+nyc:774,Locust Point Marina,X310,,,
+nyc:775,Paerdegat Athletic Facility,B406,,,
+nyc:778,Clearview Cafe,Q135,,,
+nyc:779,Fmcp Heliport,Q099,,,
+nyc:780,Flushing Meadows Grand Bay,Q084A,,,
+nyc:781,Clove Lakes Cafe,R005,,,
+nyc:782,South Shore Restaurant,R104-G01,,,1.0
+nyc:783,Dag Hammarskjold Food Kiosk,M203C,,,
+nyc:787,Hutchinson River Prkwy Snack,X101,,,
+nyc:788,Pelham Bay Stable,X039,,,
+nyc:789,Van Cortlandt Park Stables,X092,,,
+nyc:1036,Arthur Kill Amusement Park,R172-ZN01,,,
+nyc:1037,Arthur Kill Restaurant,R172-ZN01,,,
+nyc:1038,Canarsie Park Zone 2,B018,,,1.0
+nyc:1039,"Dairy, Chess & Checkers House, Carousel",M010-ZN05,A,2026-07-22,2.0
+nyc:1040,Father Macris Park,R075A,A,2026-08-04,1.0
+nyc:1041,Fdr Brdwalk/South Beach Rest.,R046,,,
+nyc:1043,Fort #4 Playground,X038,,,
+nyc:1048,Joyce Kilmer Park,X028,N,2026-08-15,1.0
+nyc:1049,Midland Beach Zone 4,R046-ZN04,,,1.0
+nyc:1050,Mill Pond Playground,,,,
+nyc:1080,Nameoke Park,Q509,A,2026-07-30,1.0

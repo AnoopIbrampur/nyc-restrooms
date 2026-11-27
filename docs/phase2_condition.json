@@ -1,0 +1,12 @@
+{
+  "official_park_restrooms": 821,
+  "in_a_property": 792,
+  "single_station_property": 550,
+  "rated": 546,
+  "rating_counts": {
+    "A": 361,
+    "N": 114,
+    "U": 71
+  },
+  "latest_inspection_median": "2026-07-06"
+}

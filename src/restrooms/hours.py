@@ -72,16 +72,27 @@ def _osm_mask(oh: OpeningHours, week_start: datetime) -> tuple[str, bool]:
     return "".join(bits), unknown
 
 
+# In the OSM spec ", " separates whole rules, so "Mo, We, Fr 10:00-18:00" means
+# "Mo (all day), We (all day), Fr 10-18". Mappers mean a weekday list; ~5% of NYC
+# opening_hours strings are written this way. Join such lists before parsing.
+_WEEKDAY_COMMA_SPACE = re.compile(
+    r"\b(Mo|Tu|We|Th|Fr|Sa|Su|PH)\s*,\s+(?=(?:Mo|Tu|We|Th|Fr|Sa|Su|PH)\b)"
+)
+
+
 def parse_osm(text: str | None) -> Hours:
     if not text or not text.strip():
         return NONE
+    fixed = _WEEKDAY_COMMA_SPACE.sub(r"\1,", text.strip())
     try:
-        oh = OpeningHours(text.strip(), coords=NYC_COORDS, country="US")
+        oh = OpeningHours(fixed, coords=NYC_COORDS, country="US")
     except (ParserError, ValueError):
         return Hours(None, None, "none", frozenset({"unparseable"}))
     summer, u1 = _osm_mask(oh, SUMMER_WEEK)
     winter, u2 = _osm_mask(oh, WINTER_WEEK)
     flags = {"unknown_state"} if (u1 or u2) else set()
+    if fixed != text.strip():
+        flags.add("weekday_comma_fixed")
     if re.search(r"sunset|sunrise|dusk|dawn", text):
         flags.add("solar")
     return Hours(summer, winter, "medium" if "unknown_state" in flags else "high", frozenset(flags))

@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NYC Restroom Deserts</title>
+<meta name="description" content="Walking time to the nearest free, open public restroom across New York City, hour by hour.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<style>
+  :root {
+    --bg: #fbfaf7; --panel: #ffffff; --ink: #1d1f23; --muted: #5f6570; --line: #e3e1db;
+    --accent: #2f5bd3; --bad: #b4322a;
+    --c0: #1a7f64; --c1: #74b88f; --c2: #f0d27a; --c3: #e8894c; --c4: #b4322a; --nonet: #c9c7c1;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #15171a; --panel: #1d2024; --ink: #eceae6; --muted: #a2a7ae; --line: #30343a;
+      --accent: #7d9cff; --bad: #f07b6f; --nonet: #4a4d52;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink);
+    font: 15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif; }
+  .wrap { display: grid; grid-template-columns: 360px 1fr; height: 100%; }
+  aside { padding: 20px 20px 16px; border-right: 1px solid var(--line); background: var(--panel);
+    overflow-y: auto; }
+  h1 { font-size: 20px; margin: 0 0 4px; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); margin: 0 0 18px; font-size: 13.5px; }
+  .big { font-size: 40px; font-weight: 650; letter-spacing: -0.02em; line-height: 1; }
+  .big small { font-size: 15px; font-weight: 500; color: var(--muted); letter-spacing: 0; }
+  .stat { margin: 6px 0 18px; }
+  .stat p { margin: 6px 0 0; color: var(--muted); font-size: 13.5px; }
+  label.h { display: block; font-weight: 600; font-size: 13px; margin: 14px 0 6px; }
+  input[type=range] { width: 100%; accent-color: var(--accent); }
+  .hour { font-variant-numeric: tabular-nums; font-weight: 600; }
+  .seg { display: flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  .seg button { flex: 1; border: 0; background: transparent; color: var(--ink); padding: 7px 4px;
+    font: inherit; font-size: 13px; cursor: pointer; }
+  .seg button + button { border-left: 1px solid var(--line); }
+  .seg button[aria-pressed=true] { background: var(--accent); color: #fff; }
+  .legend { display: grid; grid-template-columns: 14px 1fr; gap: 4px 8px; font-size: 13px; margin-top: 8px; }
+  .sw { width: 14px; height: 14px; border-radius: 3px; }
+  .note { font-size: 12.5px; color: var(--muted); margin-top: 18px; border-top: 1px solid var(--line); padding-top: 12px; }
+  .note a { color: var(--accent); }
+  .toggles { display: flex; gap: 14px; font-size: 13px; margin-top: 4px; flex-wrap: wrap; }
+  #map { height: 100%; background: var(--bg); }
+  .leaflet-container { font: inherit; }
+  .basemap { filter: grayscale(1) contrast(0.9) opacity(0.75); }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .basemap { filter: grayscale(1) invert(1) contrast(0.85) opacity(0.6); }
+  }
+  @media (max-width: 760px) {
+    .wrap { grid-template-columns: 1fr; grid-template-rows: auto 60vh; height: auto; }
+    aside { border-right: 0; border-bottom: 1px solid var(--line); padding: 16px; }
+    #map { height: 60vh; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <aside>
+    <h1>NYC restroom deserts</h1>
+    <p class="sub">Walking time to the nearest <b>free, public restroom that is open</b> at that hour, on a weekday.</p>
+
+    <div class="stat">
+      <div class="big"><span id="share">–</span><small> of subway entries</small></div>
+      <p>start at a station more than a <b>10-minute walk</b> from an open restroom at <span class="hour" id="hourLabel2">–</span>.</p>
+    </div>
+
+    <label class="h" for="hour">Hour: <span class="hour" id="hourLabel">–</span></label>
+    <input id="hour" type="range" min="0" max="23" step="1" value="18">
+
+    <label class="h">Season and hours reading</label>
+    <div class="seg" role="group" aria-label="Scenario">
+      <button data-s="summer_A" aria-pressed="true">Summer · A</button>
+      <button data-s="summer_B" aria-pressed="false">Summer · B</button>
+      <button data-s="winter" aria-pressed="false">Winter</button>
+    </div>
+    <p class="sub" style="margin-top:6px">613 park restrooms list "8am–4pm, open later seasonally". <b>A</b> = they close at 4pm, <b>B</b> = at dusk (8pm) in summer. Only 4–8pm changes.</p>
+
+    <label class="h">Show</label>
+    <div class="toggles">
+      <label><input type="checkbox" id="tStations" checked> Subway stations</label>
+      <label><input type="checkbox" id="tRestrooms" checked> Open restrooms</label>
+    </div>
+
+    <label class="h">Walk to nearest open restroom</label>
+    <div class="legend">
+      <span class="sw" style="background:var(--c0)"></span><span>≤ 5 min</span>
+      <span class="sw" style="background:var(--c1)"></span><span>5–10 min</span>
+      <span class="sw" style="background:var(--c2)"></span><span>10–15 min</span>
+      <span class="sw" style="background:var(--c3)"></span><span>15–30 min</span>
+      <span class="sw" style="background:var(--c4)"></span><span>&gt; 30 min or none reachable</span>
+      <span class="sw" style="background:var(--nonet)"></span><span>no street network (rail yards, airports)</span>
+    </div>
+
+    <div class="note">
+      <b>What counts:</b> official NYC public restrooms (parks, libraries, plazas, transit, privately owned public spaces) with listed hours, plus OpenStreetMap public toilets with listed hours. Hundreds of OSM toilets have no hours and are left out, so night-time numbers are a pessimistic reading. See the findings.
+      <br><br>Walking on the OSM street network at 1.25 m/s. Subway entries from MTA hourly ridership (summer: Jul 6–Aug 2 2026; winter: Jan 5–Feb 1 2026). Staten Island has no subway entries in the data, so it adds nothing to the percentage.
+      <br><br><a href="https://github.com/AnoopIbrampur/nyc-restrooms/blob/main/docs/phase2_findings.md">Findings</a> · <a href="https://github.com/AnoopIbrampur/nyc-restrooms/blob/main/docs/phase2_prereg.md">Pre-registration</a> · <a href="https://github.com/AnoopIbrampur/nyc-restrooms">Code</a>
+    </div>
+  </aside>
+  <div id="map" aria-label="Map of walking time to the nearest open restroom"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/h3-js@4.1.0/dist/h3-js.umd.js"></script>
+<script>
+(async function () {
+  const css = getComputedStyle(document.documentElement);
+  const C = ["--c0", "--c1", "--c2", "--c3", "--c4", "--nonet"].map(v => css.getPropertyValue(v).trim());
+  const bin = m => m === 255 ? 5 : m <= 5 ? 0 : m <= 10 ? 1 : m <= 15 ? 2 : m <= 30 ? 3 : 4;
+  const fmtHour = h => (h % 12 === 0 ? 12 : h % 12) + (h < 12 ? " am" : " pm");
+
+  const map = L.map("map", { preferCanvas: true, zoomControl: true }).setView([40.72, -73.94], 11);
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    maxZoom: 18, className: "basemap"
+  }).addTo(map);
+
+  const data = await (await fetch("data.json")).json();
+  const renderer = L.canvas({ padding: 0.3 });
+
+  // hexes
+  const hexLayer = L.layerGroup().addTo(map);
+  const hexPolys = data.hexes.map(id => {
+    const boundary = h3.cellToBoundary(id); // [lat, lng]
+    const poly = L.polygon(boundary, { renderer, weight: 0, fillOpacity: 0.55 });
+    poly.addTo(hexLayer);
+    return poly;
+  });
+
+  // stations
+  const stLayer = L.layerGroup().addTo(map);
+  const maxE = Math.max(...data.stations.map(s => s.e));
+  data.stations.forEach(s => {
+    L.circleMarker([s.la, s.lo], {
+      renderer, radius: 2 + 9 * Math.sqrt(s.e / maxE), weight: 1, color: "#1d1f23",
+      fillColor: "#ffffff", fillOpacity: 0.9
+    }).bindTooltip(`<b>${s.n}</b><br>${s.e.toLocaleString()} weekday entries<br>${s.s.toLocaleString()} enter when no restroom is within 10 min (summer, A)`)
+      .addTo(stLayer);
+  });
+
+  // restrooms
+  const rrLayer = L.layerGroup().addTo(map);
+  const rrMarkers = data.restrooms.map(r => {
+    const m = L.circleMarker([r.la, r.lo], { renderer, radius: 3, weight: 0, fillColor: "#2f5bd3", fillOpacity: 0.95 })
+      .bindTooltip(`<b>${r.n}</b><br>${r.t}${r.h ? "<br>" + r.h.replace(/\n/g, "<br>") : ""}`);
+    return { r, m };
+  });
+
+  const hourEl = document.getElementById("hour");
+  let scen = "summer_A";
+
+  function draw() {
+    const h = +hourEl.value;
+    document.getElementById("hourLabel").textContent = fmtHour(h);
+    document.getElementById("hourLabel2").textContent = fmtHour(h);
+    const share = data.profile[scen][h];
+    document.getElementById("share").textContent = Math.round(share * 100) + "%";
+    const vals = data.hexMinutes[scen];
+    hexPolys.forEach((p, i) => p.setStyle({ fillColor: C[bin(vals[i * 24 + h])] }));
+    rrLayer.clearLayers();
+    if (document.getElementById("tRestrooms").checked) {
+      rrMarkers.forEach(({ r, m }) => { if (r.o[scen][h] === "1") m.addTo(rrLayer); });
+    }
+  }
+
+  hourEl.addEventListener("input", draw);
+  document.querySelectorAll(".seg button").forEach(b => b.addEventListener("click", () => {
+    document.querySelectorAll(".seg button").forEach(x => x.setAttribute("aria-pressed", x === b));
+    scen = b.dataset.s; draw();
+  }));
+  document.getElementById("tStations").addEventListener("change", e =>
+    e.target.checked ? stLayer.addTo(map) : map.removeLayer(stLayer));
+  document.getElementById("tRestrooms").addEventListener("change", draw);
+  draw();
+})();
+</script>
+</body>
+</html>

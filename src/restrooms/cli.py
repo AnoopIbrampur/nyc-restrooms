@@ -37,6 +37,64 @@ def run_checks(phase: int | None = None) -> int:
     return 1 if failed else 0
 
 
+def _ridership() -> None:
+    from restrooms.ridership import ingest_ridership
+
+    ingest_ridership()
+
+
+def _walk_graph() -> None:
+    import json
+
+    from restrooms.paths import DOCS, PROCESSED, RAW
+    from restrooms.walk import build_graph, network_checks
+
+    g, stats = build_graph(RAW / "new-york-latest.osm.pbf")
+    g.save(PROCESSED / "walk_graph.npz")
+    stats["checks"] = network_checks(g)
+    stats["checks"]["note_over_3"] = (
+        "inspected 2026-11-26: water crossings with no walkable bridge "
+        "(Throgs Neck/Whitestone, East River at Astoria)"
+    )
+    (DOCS / "phase2_walk_graph.json").write_text(json.dumps(stats, indent=2) + "\n")
+    print(stats)
+
+
+def _deserts() -> None:
+    from restrooms.deserts import run
+
+    run()
+
+
+def _condition() -> None:
+    import json
+
+    import pandas as pd
+
+    from restrooms.condition import condition_overlay
+    from restrooms.paths import DOCS, PROCESSED
+
+    df, stats = condition_overlay(pd.read_parquet(PROCESSED / "places.parquet"))
+    df.to_csv(DOCS / "phase2_park_condition.csv", index=False)
+    (DOCS / "phase2_condition.json").write_text(json.dumps(stats, indent=2, default=str) + "\n")
+    print(stats)
+
+
+def _export_map() -> None:
+    from restrooms.export_map import export
+
+    export()
+
+
+PHASE2 = {
+    "ridership": _ridership,
+    "walk-graph": _walk_graph,
+    "deserts": _deserts,
+    "condition": _condition,
+    "export-map": _export_map,
+}
+
+
 def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(prog="restrooms")
     sub = p.add_subparsers(dest="cmd", required=True)
@@ -47,7 +105,16 @@ def main(argv: list[str] | None = None) -> int:
     i.add_argument("--only", nargs="+", help="source keys to ingest (default: all Phase 1)")
     i.add_argument("--force", action="store_true", help="re-download files even if fresh")
     sub.add_parser("build", help="build processed tables from data/raw (Phase 1)")
+    sub.add_parser("ridership", help="download subway entries by hour of week (Phase 2)")
+    sub.add_parser("walk-graph", help="build the pedestrian network (Phase 2)")
+    sub.add_parser("deserts", help="walk times + headline metrics (Phase 2, ~5 min)")
+    sub.add_parser("condition", help="Parks restroom condition overlay (Phase 2)")
+    sub.add_parser("export-map", help="write docs/map/data.json (Phase 2)")
     args = p.parse_args(argv)
+
+    if args.cmd in PHASE2:
+        PHASE2[args.cmd]()
+        return 0
 
     if args.cmd == "check-sources":
         return run_checks(args.phase)

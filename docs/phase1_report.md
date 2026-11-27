@@ -58,7 +58,7 @@ Masks are 168 hours (Mon 00:00 first). An hour counts as open if the place is op
 | low | 1 | only part understood |
 | none | 97 | 90 have no hours at all; the rest are "Open by permit", a URL, "Open during games…" |
 
-The medium count is dominated by **one string covering 613 rows (56%)**: "8am-4pm, Open later seasonally". We do **not** invent the later closing time. Those rows keep 8am–4pm in both seasons and carry `season_extension_unknown`. **Phase 2 must report its desert numbers under both readings (4pm close vs dusk close)**, because this one assumption drives the 9am-vs-night comparison.
+The medium count is dominated by **one string covering 613 rows (56%)**: "8am-4pm, Open later seasonally". We do **not** invent the later closing time. Those rows keep 8am–4pm in both seasons and carry `season_extension_unknown`. **Phase 2 must report its desert numbers under both readings (4pm close vs dusk close)**, because this one assumption changes the late-afternoon picture. *(Corrected in Phase 2: an earlier version said it drove the 9am-vs-night comparison. It doesn't. Both readings agree at 9am and 11pm and differ only between 16:00 and 20:00 in summer.)*
 
 Other flags (rows): `seasonal_closed_winter` 126 (the dataset marks them Seasonal, so they're closed in the winter week), `not_operational` 102 (closed in both weeks), `typo_fixed` 27, `dusk` 17, `ambiguous_ranges` 5, `midday_closure` 5.
 
