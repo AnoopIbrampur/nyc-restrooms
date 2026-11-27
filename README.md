@@ -2,6 +2,8 @@
 
 Where in New York City can you actually use a bathroom, right now?
 
+**[Live map: walking time to the nearest open restroom, hour by hour](https://anoopibrampur.github.io/nyc-restrooms/)**
+
 Three parts (see [PLAN.md](PLAN.md)):
 
 1. **Restroom deserts**: walking time to the nearest free, open restroom across NYC, by hour, weighted by foot traffic.
@@ -13,7 +15,7 @@ Open data only (NYC Open Data, NY State Open Data, OpenStreetMap, Refuge Restroo
 ## Status
 - **Phase 0**: repo + verified source registry (15 sources, all pass the live check).
 - **Phase 1**: data layer done. 80,656 NYC places with per-source restroom evidence, parsed summer/winter hours, and delivery-worker coverage. Cross-source matching audited at 98% precision. See the [Phase 1 report](docs/phase1_report.md).
-- **Phase 2**: restroom deserts (pre-registered). At 11 pm on a weekday, **85.3%** of subway entries are at a station with no free public restroom open (by its listed hours) within a 10-minute walk, vs **14.1%** at 9 am. If every public toilet with no listed hours were open all night, the 11 pm figure would be 19.2% (the pre-registered upper bound on access). An exploratory, post-hoc estimate that drops likely duplicates puts it near 56%. See the [findings](docs/phase2_findings.md), the [pre-registration](docs/phase2_prereg.md) and the interactive map (`docs/map/`).
+- **Phase 2**: restroom deserts (pre-registered). At 11 pm on a weekday, **85.3%** of subway entries are at a station with no free public restroom open (by its listed hours) within a 10-minute walk, vs **14.1%** at 9 am. If every public toilet with no listed hours were open all night, the 11 pm figure would be 19.2% (the pre-registered upper bound on access). An exploratory, post-hoc estimate that drops likely duplicates puts it near 56%. See the [findings](docs/phase2_findings.md), the [pre-registration](docs/phase2_prereg.md) and the [live interactive map](https://anoopibrampur.github.io/nyc-restrooms/).
 - Next, **Phase 3**: restroom-likelihood model.
 
 ## Quickstart
