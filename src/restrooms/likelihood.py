@@ -36,6 +36,9 @@ NO_ACCESS = {"private", "no"}
 # logistic C per stage, chosen by grouped-CV grid {0.02..1.0} on OSM labels (2026-11-27):
 # stage 1 log-loss 0.3641 (C=.02) ... 0.3216 (.5), 0.3209 (1.0); stage 2 best 0.5565 at C=.2
 LOGIT_C = {"s1": 1.0, "s2": 0.2}
+# Which prediction later phases use. "baseline" until the pre-registered audit shows the
+# model beats it (docs/phase3_interim.md). Changing this needs an audit result.
+SHIPPED = "baseline"
 CHAIN_MIN = 5  # a normalized name seen >= 5 times in the universe = chain
 TOP_CHAINS = 60
 TOP_CLASSES = 80
@@ -265,6 +268,9 @@ def run() -> dict:
     for i, c in enumerate(CLASSES):
         out[f"model_{c}"] = pm[:, i].round(5)
         out[f"base_{c}"] = pb[:, i].round(5)
+        # what downstream phases use: the baseline until the audit says otherwise
+        out[f"use_{c}"] = out[f"{'model' if SHIPPED == 'model' else 'base'}_{c}"]
+    out["use_source"] = SHIPPED
     out.to_parquet(PROCESSED / "restroom_likelihood.parquet", index=False)
 
     report["mean_predicted"] = {

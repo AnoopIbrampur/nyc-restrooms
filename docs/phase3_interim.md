@@ -1,6 +1,12 @@
-# Phase 3 interim: model trained, predictions frozen, waiting on the audit
+# Phase 3: model built, not yet tested
 
-**Status (2026-11-27):** everything up to scoring is done and pushed. Phase 3 can't finish until the 200-place audit comes back. The result (beats baseline / loses / not supported) is decided by the pre-registered rule in [`phase3_prereg.md`](phase3_prereg.md).
+**Status (2026-11-27): built, not yet tested.** The model, baseline, audit sample and frozen predictions are all on GitHub, but the 200-place hand audit (the only valid test) hasn't been done. Until it is:
+
+- **No claim is made that the model beats the category baseline.**
+- **The category baseline is what the project ships**: the `use_*` columns in `restroom_likelihood.parquet`, used by later phases and the map. This is the fallback the pre-registration specifies.
+- **The test stays open.** If the audit sheet is ever filled by following the protocol, `restrooms audit-score` scores it once against the predictions frozen in commit `58dcfc1`. Re-running `restrooms likelihood` does *not* change the frozen file. The result (beats baseline / loses / not supported) is decided by the pre-registered rule in [`phase3_prereg.md`](phase3_prereg.md).
+
+Why it's untested: the audit needs about 8–12 hours of phone calls and visits by a person. Online sources (map attributes, reviews) can't stand in, because they're the stale data the model is meant to replace, and the pre-registration rules them out.
 
 ## Timeline (all on GitHub, in order)
 1. `782a778`: pre-registration, audit protocol, category mapping (00:52 UTC)

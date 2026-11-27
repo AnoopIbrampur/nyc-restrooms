@@ -25,7 +25,11 @@ ANSWERS = {"free": 0, "customers": 1, "none": 2}
 REPLACE = {"no_answer", "closed", "refused"}
 
 
-def freeze() -> pd.DataFrame:
+def freeze(force: bool = False) -> pd.DataFrame:
+    """Write the frozen predictions once. Refuses to overwrite: the committed file is the
+    pre-registered test, and re-freezing after seeing audit answers would void it."""
+    if FROZEN.exists() and not force:
+        raise FileExistsError(f"{FROZEN} already exists; predictions are frozen")
     sheet = pd.read_csv(SHEET)
     pred = pd.read_parquet(PROCESSED / "restroom_likelihood.parquet")
     cols = ["place_id"] + [f"{w}_{c}" for w in ("model", "base") for c in CLASSES]
