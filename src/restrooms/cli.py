@@ -102,6 +102,12 @@ def _audit_score() -> None:
     print(json.dumps(score(counts), indent=2))
 
 
+def _worker_export() -> None:
+    from restrooms.worker_export import export
+
+    export()
+
+
 PHASE2 = {
     "ridership": _ridership,
     "walk-graph": _walk_graph,
@@ -110,6 +116,7 @@ PHASE2 = {
     "export-map": _export_map,
     "likelihood": _likelihood,
     "audit-score": _audit_score,
+    "worker-export": _worker_export,
 }
 
 
@@ -132,6 +139,9 @@ def main(argv: list[str] | None = None) -> int:
         "likelihood", help="train restroom model + baseline, predict all places (Phase 3)"
     )
     sub.add_parser("audit-score", help="score the filled audit sheet, once (Phase 3)")
+    sub.add_parser(
+        "worker-export", help="data for the delivery-worker page in web/worker (Phase 4)"
+    )
     args = p.parse_args(argv)
 
     if args.cmd in PHASE2:

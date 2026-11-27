@@ -1,0 +1,14 @@
+{
+ "as_of": "2026-11-26",
+ "window_days": 180,
+ "rule": {
+  "min_devices_place": 3,
+  "min_refused_place": 3,
+  "min_refused_share": 0.5,
+  "min_area_reports": 10,
+  "min_area_devices": 5
+ },
+ "places": [],
+ "areas": [],
+ "withheld_contested": 0
+}

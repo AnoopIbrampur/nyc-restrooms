@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Delivery Worker Restroom Rights</title>
+<meta name="description" content="NYC delivery workers have a legal right to use the restroom where they pick up orders. What the law says, how to report a refusal, and the nearest public restrooms open now.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<style>
+  :root {
+    --bg: #f7f6f2; --card: #ffffff; --ink: #17191c; --muted: #5b616b; --line: #e2dfd8;
+    --accent: #1f5bd6; --accent-ink: #ffffff; --ok: #1a7f5a; --warn: #a3471b; --soft: #eef2fb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #131518; --card: #1c1f23; --ink: #ecebe7; --muted: #a1a7af; --line: #2f3338;
+      --accent: #7c9dff; --accent-ink: #0d1020; --ok: #5cc79a; --warn: #f0a06f; --soft: #1e2533;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #131518; --card: #1c1f23; --ink: #ecebe7; --muted: #a1a7af; --line: #2f3338;
+    --accent: #7c9dff; --accent-ink: #0d1020; --ok: #5cc79a; --warn: #f0a06f; --soft: #1e2533;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 16px 16px 48px; }
+  h1 { font-size: 26px; line-height: 1.2; margin: 8px 0 6px; letter-spacing: -0.01em; }
+  h2 { font-size: 18px; margin: 0 0 8px; }
+  p { margin: 0 0 10px; }
+  .lede { color: var(--muted); margin-bottom: 16px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px; margin: 14px 0; }
+  .hero { background: var(--soft); border-color: transparent; }
+  .hero ul { margin: 6px 0 12px; padding-left: 20px; }
+  .hero li { margin: 4px 0; }
+  .btns { display: flex; flex-wrap: wrap; gap: 8px; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 14px;
+    border-radius: 10px; border: 1px solid var(--line); background: var(--card); color: var(--ink);
+    font: inherit; font-weight: 600; text-decoration: none; cursor: pointer; }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+  .btn[disabled] { opacity: 0.55; cursor: not-allowed; }
+  details { border-top: 1px solid var(--line); padding: 10px 0; }
+  details:first-of-type { border-top: 0; }
+  summary { cursor: pointer; font-weight: 600; min-height: 32px; }
+  details p, details ul { margin-top: 8px; }
+  blockquote { margin: 8px 0; padding: 8px 12px; border-left: 3px solid var(--accent); color: var(--muted); font-size: 15px; }
+  .small { font-size: 13.5px; color: var(--muted); }
+  #map { height: 300px; border-radius: 10px; margin: 10px 0; background: var(--bg); }
+  ol.near { padding-left: 20px; margin: 8px 0; }
+  ol.near li { margin: 8px 0; }
+  .dist { font-variant-numeric: tabular-nums; font-weight: 600; }
+  .langs { display: flex; flex-wrap: wrap; gap: 6px 12px; }
+  .langs a { color: var(--accent); }
+  a { color: var(--accent); }
+  .status { font-weight: 600; color: var(--ok); }
+  .basemap { filter: grayscale(1) contrast(0.9) opacity(0.8); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .basemap { filter: grayscale(1) invert(1) contrast(0.85) opacity(0.6); } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Picking up an order? You can use the restroom.</h1>
+  <p class="lede">A guide for NYC app delivery workers (food, grocery and other goods).</p>
+
+  <section class="card hero" aria-labelledby="h-right">
+    <h2 id="h-right">Your right, in short</h2>
+    <ul>
+      <li>When you pick up an order at a <b>restaurant, grocery or any other business</b> in NYC, it must let you use a restroom on the premises.</li>
+      <li>If it has no customer restroom, its <b>staff restroom counts</b>.</li>
+      <li>A business may say no only if reaching the restroom means walking through the <b>kitchen, food-prep, storage or dish area</b>, or if there's an <b>obvious health or safety risk</b>.</li>
+      <li>If you're wrongly refused, you may be owed <b>$200 each time</b>.</li>
+    </ul>
+    <div class="btns">
+      <a class="btn primary" href="https://www.nyc.gov/assets/dca/images/content/workers/Delivery-Worker-Bathroom-Access-Card-1080x1920.png" target="_blank" rel="noopener">Show the official access card</a>
+      <a class="btn" href="https://a866-dcwpbp.nyc.gov/worker-complaint/file-complaint?topic=delivery-worker" target="_blank" rel="noopener">File a complaint</a>
+      <a class="btn" href="tel:311">Call 311</a>
+    </div>
+    <p class="small" style="margin-top:10px">On the 311 call, ask for "Delivery Worker". DCWP says it won't share your identity without your consent and never asks about immigration status. Punishing you for using this right is illegal.</p>
+  </section>
+
+  <section class="card" aria-labelledby="h-near">
+    <h2 id="h-near">Refused, or no restroom? Public restrooms open now</h2>
+    <p class="small" id="openNote">Free public restrooms (parks, libraries, transit, plazas) that are open right now by their listed hours.</p>
+    <div class="btns"><button class="btn primary" id="locate">Use my location</button></div>
+    <p class="small">Your location stays on your phone. It's only used to sort the list. Or tap the map to pick a spot.</p>
+    <div id="map" role="application" aria-label="Map of public restrooms open now"></div>
+    <ol class="near" id="near"></ol>
+  </section>
+
+  <section class="card" aria-labelledby="h-law">
+    <h2 id="h-law">What the law says</h2>
+    <details>
+      <summary>The rule (Admin Code §20-1527, since Jan 26, 2026)</summary>
+      <blockquote>"A food service establishment or other business … that sells or provides goods delivered by a contracted delivery worker shall provide access to a toilet facility located on such premises to a contracted delivery worker that picks up such goods…"</blockquote>
+      <p>"Contracted delivery worker" means someone retained by a delivery app or service to deliver goods. The pickup includes selecting, assembling or packing goods in the store, so it covers grocery shoppers too. A "toilet facility" is the restroom for customers, or the staff restroom if there's no customer restroom.</p>
+    </details>
+    <details>
+      <summary>When a business can say no</summary>
+      <ul>
+        <li>Reaching the restroom would mean walking through a kitchen, food preparation or storage area, or utensil-washing area.</li>
+        <li>Access would create an obvious health or safety risk to you or the business.</li>
+        <li>Any exception DCWP creates by rule. <span class="small">None found as of the date below.</span></li>
+      </ul>
+    </details>
+    <details>
+      <summary>What you can get, and the penalties</summary>
+      <p>You may be owed <b>$200 per refusal</b>, plus anything needed to make you whole (§20-1508). The business can face civil penalties of $500 for a first violation, up to $750 for a second and up to $1,000 for each later one within two years (§20-1509).</p>
+    </details>
+    <details>
+      <summary>Older rule for app–restaurant contracts</summary>
+      <p>Since Jan 24, 2022, delivery apps' contracts with restaurants must also require restroom access for food delivery workers, with the same kitchen and health-or-safety exceptions (Local Law 117 of 2021).</p>
+    </details>
+    <details>
+      <summary>Is the law being challenged?</summary>
+      <p>The 2025 delivery-worker laws are in effect. Instacart's lawsuit against the grocery-delivery rules is on appeal (2d Cir., No. 26-172). The courts have refused to pause the laws while it continues.</p>
+    </details>
+  </section>
+
+  <section class="card" aria-labelledby="h-reports">
+    <h2 id="h-reports">Reports from workers</h2>
+    <p id="reportsBody">No reports are published yet.</p>
+    <div class="btns"><button class="btn" disabled title="Reporting opens when the project's server is ready">Report what happened (coming soon)</button></div>
+    <p class="small" style="margin-top:10px">How reports will work: you tap <i>let in</i>, <i>refused</i>, <i>told the restroom is through the kitchen</i> or <i>no restroom</i>. There's no name, no text and no account. A business is listed only after at least 3 different workers report being refused there within 6 months, and refusals are at least half of its reports. Businesses can dispute a listing. "Through the kitchen" is a legal exception and is never counted as a refusal. A listing means <i>workers reported being refused here</i>, not that the business broke the law.</p>
+  </section>
+
+  <section class="card" aria-labelledby="h-langs">
+    <h2 id="h-langs">Read your rights in your language</h2>
+    <p class="small">DCWP's official Notice of Rights for delivery workers:</p>
+    <div class="langs" id="langs"></div>
+  </section>
+
+  <p class="small">Last checked <b>November 27, 2026</b> against the enacted local laws and DCWP's pages. This is general information, not legal advice. For your case, contact DCWP or a workers' rights organization. Sources and details: <a href="https://github.com/AnoopIbrampur/nyc-restrooms/blob/main/docs/phase4_law_notes.md">law notes</a> · <a href="https://github.com/AnoopIbrampur/nyc-restrooms">project code</a>.</p>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(async function () {
+  const LANGS = [
+    ["English", "english"], ["Español", "spanish"], ["العربية", "arabic"], ["বাংলা", "bengali"],
+    ["中文 (简体)", "simplified-chinese"], ["中文 (繁體)", "traditional-chinese"], ["Français", "french"],
+    ["Kreyòl Ayisyen", "haitian-creole"], ["한국어", "korean"], ["Polski", "polish"], ["Русский", "russian"], ["اردو", "urdu"],
+  ];
+  document.getElementById("langs").innerHTML = LANGS.map(([label, slug]) =>
+    `<a href="https://www.nyc.gov/site/dca/workers/workersrights/delivery-service-worker-rights-${slug}.page" target="_blank" rel="noopener" lang="">${label}</a>`
+  ).join("");
+
+  // --- reports (already aggregated server-side; raw reports never reach this page)
+  try {
+    const rep = await (await fetch("reports_public.json")).json();
+    if (rep.places && rep.places.length) {
+      document.getElementById("reportsBody").innerHTML =
+        `<ul>${rep.places.map(p => `<li><b>${escapeHtml(p.name)}</b>: ${p.refused} workers reported being refused (${p.first} to ${p.last})</li>`).join("")}</ul>`;
+    }
+  } catch (e) { /* keep the empty state */ }
+
+  // --- open-now restrooms
+  const data = await (await fetch("restrooms.json")).json();
+  const ny = new Intl.DateTimeFormat("en-US", { timeZone: "America/New_York", weekday: "short", hour: "numeric", hour12: false, month: "numeric" });
+  function nowIndex() {
+    const parts = Object.fromEntries(ny.formatToParts(new Date()).map(p => [p.type, p.value]));
+    const dow = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].indexOf(parts.weekday);
+    const hour = (+parts.hour) % 24;
+    const month = +parts.month;
+    const season = month >= 4 && month <= 10 ? "s" : "w"; // Apr-Oct uses the summer hours
+    return { idx: dow * 24 + hour, season, hour, label: `${parts.weekday} ${hour}:00 (NYC time)` };
+  }
+  const now = nowIndex();
+  const open = data.filter(r => r[now.season][now.idx] === "1");
+  document.getElementById("openNote").textContent =
+    `${open.length} free public restrooms are open right now (${now.label}) by their listed hours: parks, libraries, transit and plazas. Hours can be wrong. Some places close early.`;
+
+  const map = L.map("map", { zoomControl: true }).setView([40.73, -73.95], 12);
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors', maxZoom: 19, className: "basemap"
+  }).addTo(map);
+  const layer = L.layerGroup().addTo(map);
+  open.forEach(r => L.circleMarker([r.la, r.lo], { radius: 5, weight: 1, color: "#fff", fillColor: "#1a7f5a", fillOpacity: 0.95 })
+    .bindPopup(`<b>${escapeHtml(r.n)}</b><br>${escapeHtml(r.t)}${r.h ? "<br><small>" + escapeHtml(r.h).replace(/\n/g, "<br>") + "</small>" : ""}`)
+    .addTo(layer));
+  let me = null;
+
+  function km(a, b) {
+    const R = 6371, t = Math.PI / 180;
+    const dLa = (b[0] - a[0]) * t, dLo = (b[1] - a[1]) * t;
+    const h = Math.sin(dLa / 2) ** 2 + Math.cos(a[0] * t) * Math.cos(b[0] * t) * Math.sin(dLo / 2) ** 2;
+    return 2 * R * Math.asin(Math.sqrt(h));
+  }
+  function listNear(pt) {
+    if (me) map.removeLayer(me);
+    me = L.circleMarker(pt, { radius: 7, weight: 3, color: "#1f5bd6", fillColor: "#fff", fillOpacity: 1 }).addTo(map);
+    const near = open.map(r => ({ r, d: km(pt, [r.la, r.lo]) })).sort((a, b) => a.d - b.d).slice(0, 5);
+    const ol = document.getElementById("near");
+    ol.innerHTML = near.length ? near.map(({ r, d }) => {
+      const mins = Math.round(d * 1000 / 1.25 / 60 * 1.25); // straight line x ~1.25 detour, 1.25 m/s
+      return `<li><b>${escapeHtml(r.n)}</b>: <span class="dist">${(d * 0.621).toFixed(2)} mi</span> straight line (about ${mins} min walk)<br>
+        <span class="small">${escapeHtml(r.t)}</span> · <a href="https://www.openstreetmap.org/directions?engine=fossgis_osrm_foot&route=${pt[0]}%2C${pt[1]}%3B${r.la}%2C${r.lo}" target="_blank" rel="noopener">Walking directions</a></li>`;
+    }).join("") : "<li>No public restroom with listed hours is open right now.</li>";
+    const b = L.latLngBounds([pt, ...near.map(n => [n.r.la, n.r.lo])]);
+    map.fitBounds(b.pad(0.25));
+  }
+  map.on("click", e => listNear([e.latlng.lat, e.latlng.lng]));
+  document.getElementById("locate").addEventListener("click", () => {
+    if (!navigator.geolocation) return alert("Location isn't available on this device. Tap the map instead.");
+    navigator.geolocation.getCurrentPosition(
+      p => listNear([p.coords.latitude, p.coords.longitude]),
+      () => alert("Couldn't get your location. Tap the map instead."),
+      { enableHighAccuracy: true, timeout: 10000 }
+    );
+  });
+
+  function escapeHtml(s) { return String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])); }
+})();
+</script>
+</body>
+</html>
