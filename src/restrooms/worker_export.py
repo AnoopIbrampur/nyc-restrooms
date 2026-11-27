@@ -1,4 +1,4 @@
-"""Data for the delivery-worker page (web/worker/, NOT published until approved).
+"""Data for the delivery-worker page (docs/worker/, published on GitHub Pages).
 
 - restrooms.json: primary-set restrooms (Phase 2) with full summer/winter weekly masks
   under reading A (the conservative one: "open later seasonally" closes at 4 pm).
@@ -17,7 +17,7 @@ from restrooms.deserts import public_osm_toilets, restroom_sets
 from restrooms.paths import PROCESSED, ROOT
 from restrooms.reports import public_summary
 
-OUT = ROOT / "web" / "worker"
+OUT = ROOT / "docs" / "worker"
 
 
 def export(today: date | None = None) -> dict:

@@ -1,6 +1,6 @@
 # Phase 4 report: delivery-worker mode
 
-**Status (2026-11-27):** built and checked locally. **Not published.** The page lives in `web/worker/`, which GitHub Pages doesn't serve. Publishing it means moving it into `docs/` and needs the project owner's go-ahead.
+**Status (2026-11-27):** built, checked, and **published** with the project owner's approval at https://anoopibrampur.github.io/nyc-restrooms/worker/ (source: `docs/worker/`).
 
 ## The biggest finding: the right is per pickup, not per place
 The plan (written 2026-11-26 from DCWP summaries) assumed the restroom right came only through restaurants' contracts with delivery apps (Local Law 117 of 2021), so the map would label restaurants "likely covered". **Reading the enacted texts changed that.** Local Law 123 of 2025 added **Admin Code §20-1527 (in effect Jan 26, 2026)**: *any* food service establishment *or other business* must give a contracted delivery worker access to a restroom on the premises when the worker picks up goods there. That includes a staff restroom if there's no customer one, except where reaching it means walking through a kitchen, food-prep, storage or dishwashing area, or creates an obvious health or safety risk. Full notes: [`phase4_law_notes.md`](phase4_law_notes.md).
@@ -10,7 +10,7 @@ Consequences for the design:
 - Phase 1's `likely_covered_pickup` column was renamed `dohmh_food_service`, because it says nothing about legal coverage. The plan, the Phase 1 report and the README were corrected.
 - Phase 3's restroom probabilities **aren't used here**. Their "none" class includes staff-only restrooms, and under this law a staff restroom counts.
 
-## What the worker page does (`web/worker/index.html`)
+## What the worker page does (`docs/worker/index.html`)
 1. **Your right, in short**: four plain-language bullets, the official DCWP bathroom access card (linked, not rehosted), file-a-complaint and call-311 buttons.
 2. **Public restrooms open now**: the Phase 2 primary set (1,011 restrooms with listed hours). Open/closed comes from NYC time and season (Apr–Oct summer hours, conservative reading A). "Use my location" (stays on the phone) or tap the map; the five nearest show with straight-line distance, a walking estimate (×1.25 detour, 1.25 m/s, as in Phase 2) and OSM walking directions. Checked: on a Thursday evening in November, 96 were open.
 3. **What the law says**: the statute quote, exceptions, remedies ($200 per refusal to the worker; $500 / $750 / $1,000 civil penalties), the 2021 contract rule, and litigation status.

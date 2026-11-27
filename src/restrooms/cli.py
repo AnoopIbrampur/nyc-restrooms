@@ -140,7 +140,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     sub.add_parser("audit-score", help="score the filled audit sheet, once (Phase 3)")
     sub.add_parser(
-        "worker-export", help="data for the delivery-worker page in web/worker (Phase 4)"
+        "worker-export", help="data for the delivery-worker page in docs/worker (Phase 4)"
     )
     args = p.parse_args(argv)
 
