@@ -227,9 +227,14 @@ def validate(rows: list[dict]) -> dict:
     }
 
 
-def write(rows: list[dict], stats: dict, source_updated: str | None) -> None:
+def write(rows: list[dict], stats: dict, source_updated: str | None) -> bool:
+    """Write only when the restroom data changed (so quiet nights make no commit)."""
     OUT.mkdir(parents=True, exist_ok=True)
-    (OUT / "restrooms.json").write_text(json.dumps(rows, separators=(",", ":"), sort_keys=True))
+    body = json.dumps(rows, separators=(",", ":"), sort_keys=True)
+    target = OUT / "restrooms.json"
+    if target.exists() and target.read_text() == body:
+        return False
+    target.write_text(body)
     meta = {
         "built_at": datetime.now(UTC).isoformat(timespec="seconds"),
         "nyc_restrooms_updated": source_updated,
@@ -237,18 +242,31 @@ def write(rows: list[dict], stats: dict, source_updated: str | None) -> None:
         **stats,
     }
     (OUT / "meta.json").write_text(json.dumps(meta, indent=2) + "\n")
+    return True
+
+
+def fetch_official() -> tuple[pd.DataFrame, str | None]:
+    """Fresh copy of the city's table. Does not touch the analysis data manifest."""
+    from restrooms.check import make_session
+    from restrooms.ingest import fetch_socrata
+    from restrooms.sources import by_key
+
+    df, info = fetch_socrata(by_key("nyc_restrooms"), make_session())
+    return df, info.get("rows_updated_at")
 
 
 def refresh(fetch: bool = True) -> dict:
-    from restrooms.ingest import ingest, load_raw
+    from restrooms.ingest import load_raw
 
     if fetch:
-        ingest(["nyc_restrooms"])
-    raw = load_raw("nyc_restrooms")
+        raw, updated = fetch_official()
+    else:
+        raw = load_raw("nyc_restrooms")
+        manifest = json.loads((DOCS / "data_manifest.json").read_text())
+        updated = manifest.get("nyc_restrooms", {}).get("rows_updated_at")
     snap = json.loads(SNAPSHOT.read_text())
     rows = build(raw, snap)
     stats = validate(rows)
-    manifest = json.loads((DOCS / "data_manifest.json").read_text())
-    write(rows, stats, manifest.get("nyc_restrooms", {}).get("rows_updated_at"))
+    stats["changed"] = write(rows, stats, updated)
     print(stats)
     return stats
